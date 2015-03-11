@@ -43,6 +43,14 @@ describe('lib/build.js', function() {
     assert(dest, 'global');
   });
 
+  it('require css', function*() {
+    yield build({
+      cwd: join(fixtures, 'require-css'),
+      dest: dest
+    });
+    assert(dest, 'require-css');
+  });
+
 });
 
 function assert(actual, expect) {
