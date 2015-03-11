@@ -26,3 +26,4 @@ tmp/
 _site
 sea-modules
 coverage
+test/fixtures/**/dist
