@@ -78,7 +78,7 @@
 
 	exports = module.exports = __webpack_require__(5)();
 	__webpack_require__(6)(exports, __webpack_require__(4), "");
-	exports.push([module.id, "\n\n\na {\n  color: green;\n}\n", ""]);
+	exports.push([module.id, "\n\n\na {\n  color: green;\n  background: url("+__webpack_require__(7)+");\n}\n", ""]);
 
 /***/ },
 /* 3 */
@@ -281,7 +281,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(5)();
-	exports.push([module.id, "b {\n  color: red;\n}\n", ""]);
+	exports.push([module.id, "b {\n  color: red;\n  background: url("+__webpack_require__(8)+");\n}\n", ""]);
 
 /***/ },
 /* 5 */
@@ -319,6 +319,18 @@
 			list.push(item);
 		}
 	};
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "f6ead467753497971acc9dc7a6897dfe.png"
+
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "bd98d83ae100b3e9a2fd351c5a2178e9.png"
 
 /***/ }
 /******/ ]);

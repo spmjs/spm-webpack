@@ -59,8 +59,18 @@ function assert(actual, expect) {
     .forEach(function(file) {
       var filepath = join(actual, file);
       if (fs.statSync(filepath).isFile()) {
-        fs.readFileSync(filepath).toString()
-          .should.eql(fs.readFileSync(join(expect, file)).toString());
+        var c = fs.readFileSync(filepath).toString();
+        var ec = fs.readFileSync(join(expect, file)).toString();
+
+        // Clean local user path
+        var cwd = process.cwd();
+        var re = new RegExp(cwd, 'g');
+        if (c.indexOf(cwd) > -1) {
+          c = c.replace(re, '');
+          ec = ec.replace(re, '');
+        }
+
+        c.should.eql(ec);
       }
     });
 }
