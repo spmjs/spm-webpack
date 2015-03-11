@@ -35,6 +35,14 @@ describe('lib/build.js', function() {
     assert(dest, 'js-entry-no-pkg');
   });
 
+  it('global', function*() {
+    yield build({
+      cwd: join(fixtures, 'global'),
+      dest: dest
+    });
+    assert(dest, 'global');
+  });
+
 });
 
 function assert(actual, expect) {
