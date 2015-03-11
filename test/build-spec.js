@@ -69,6 +69,15 @@ describe('lib/build.js', function() {
     assert(dest, 'require-css-extract');
   });
 
+  it('require less extract', function*() {
+    yield build({
+      cwd: join(fixtures, 'require-less'),
+      dest: dest,
+      extractCSS: true
+    });
+    assert(dest, 'require-less-extract');
+  });
+
   it('jsx', function*() {
     yield build({
       cwd: join(fixtures, 'jsx'),
