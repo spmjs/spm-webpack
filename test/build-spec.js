@@ -60,6 +60,14 @@ describe('lib/build.js', function() {
     assert(dest, 'require-css-extract');
   });
 
+  it('jsx', function*() {
+    yield build({
+      cwd: join(fixtures, 'jsx'),
+      dest: dest
+    });
+    assert(dest, 'jsx');
+  });
+
 });
 
 function assert(actual, expect) {
