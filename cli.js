@@ -22,18 +22,9 @@ program
   .option('-O, --output-directory <dir>', 'output directory, default: dist')
   .option('-o, --output-file <file>', 'output file')
   .option('-f, --force', 'force to clean dest directory first')
-  .option('-r, --registry <url>', 'registry url of yuan server')
-  .option('-s, --standalone', 'standalone version')
-  .option('--sea <sea>', 'file include mode with seajs, optional: self, relative, all')
+  .option('-r, --registry <url>', 'registry url of repository server')
   .option('--umd [umd]', 'UMD-wrapped version with given global name')
   .option('--global <global>', 'replace package name to global variable, format jquery:$,underscore:_')
-  .option('--ignore <ignore>', 'determine which id will not be transported')
-  .option('--skip <skip>', 'determine which id will not be parsed when analyse')
-  .option('--include <include>', 'Deprecated. use `--sea`, `--standalone` and `--umd` instead')
-  .option('--idleading [idleading]', 'prefix of module name, default: {{name}}/{{version}}')
-  .option('--with-deps', 'build package in dependencies')
-  .option('--zip', 'archive by zip')
-  .option('--verbose', 'show more logging')
   .option('--no-color', 'disable colorful print')
   .option('--no-install', 'disable install')
   .parse(process.argv);
@@ -48,11 +39,6 @@ var entry = program.args;
 var info = '';
 if (entry.length) {
   info = 'build ' + entry.join(',');
-} else if (!pkg || !pkg.spm) {
-  console.log();
-  log.error('miss', 'package.json or "spm" key');
-  console.log();
-  process.exit(1);
 } else {
   var pkgId = pkg.name && pkg.version && (pkg.name + '@' + pkg.version) || '';
   info = ('build ' + pkgId).to.magenta.color;
@@ -67,18 +53,10 @@ var args = {
   cwd: cwd,
   outputFile: program.outputFile,
 
-  include: program.include,
-  sea: program.sea,
-  standalone: program.standalone,
   umd: program.umd,
-  ignore: program.ignore,
   global: program.global,
-  skip: program.skip,
-  idleading: program.idleading,
   registry: program.registry || (pkg.spm && pkg.spm.registry),
 
-  withDeps: program.withDeps,
-  zip: program.zip,
   force: program.force,
   install: program.install,
 
