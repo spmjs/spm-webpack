@@ -1,0 +1,8 @@
+{
+  "spm": {
+    "output": [
+      "a.js"
+    ],
+    "buildArgs": "--global jquery:jQuery"
+  }
+}

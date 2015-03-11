@@ -82,9 +82,12 @@ var args = {
   force: program.force,
   install: program.install,
 
-  pkg: pkg,
-  entry: entry
+  pkg: pkg
 };
+
+if (entry && entry.length) {
+  args.entry = entry;
+}
 
 var scripts = pkg && pkg.spm && pkg.spm.scripts || {};
 hook(scripts, 'build', function(done) {
