@@ -26,6 +26,15 @@ describe('lib/build.js', function() {
     assert(dest, 'js-entry');
   });
 
+  it('js entry umd', function*() {
+    yield build({
+      cwd: join(fixtures, 'js-entry'),
+      dest: dest,
+      umd: 'Foo'
+    });
+    assert(dest, 'js-entry-umd');
+  });
+
   it('js entry with no package.json', function*() {
     yield build({
       cwd: join(fixtures, 'js-entry-no-pkg'),
