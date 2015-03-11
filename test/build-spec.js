@@ -51,6 +51,15 @@ describe('lib/build.js', function() {
     assert(dest, 'require-css');
   });
 
+  it('require css extract', function*() {
+    yield build({
+      cwd: join(fixtures, 'require-css'),
+      dest: dest,
+      extractCSS: true
+    });
+    assert(dest, 'require-css-extract');
+  });
+
 });
 
 function assert(actual, expect) {
