@@ -1,6 +1,6 @@
 {
   "name": "spm-webpack",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "SPM project bundler based on webpack.",
   "dependencies": {
     "6to5": "~3.3.3",
