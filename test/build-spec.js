@@ -69,6 +69,14 @@ describe('lib/build.js', function() {
     assert(dest, 'require-css-extract');
   });
 
+  it('require css autoprefixer', function*() {
+    yield build({
+      cwd: join(fixtures, 'require-css-autoprefixer'),
+      dest: dest
+    });
+    assert(dest, 'require-css-autoprefixer');
+  });
+
   it('require less extract', function*() {
     yield build({
       cwd: join(fixtures, 'require-less'),

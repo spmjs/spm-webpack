@@ -1,0 +1,9 @@
+{
+  "spm": {
+    "output": [
+      "a.js"
+    ],
+    "autoprefixer": true,
+    "extractCSS": true
+  }
+}
