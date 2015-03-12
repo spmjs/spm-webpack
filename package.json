@@ -2,7 +2,6 @@
   "name": "spm-webpack",
   "version": "0.0.1",
   "description": "SPM project bundler based on webpack.",
-  "main": "lib/index",
   "dependencies": {
     "6to5": "~3.3.3",
     "colorful": "~2.1.0",
