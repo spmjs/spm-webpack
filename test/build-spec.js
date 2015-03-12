@@ -74,6 +74,15 @@ describe('lib/build.js', function() {
     assert(dest, 'global');
   });
 
+  it('idleading', function*() {
+    yield build({
+      debug: true,
+      cwd: join(fixtures, 'idleading'),
+      dest: dest
+    });
+    assert(dest, 'idleading');
+  });
+
   it('require css', function*() {
     yield build({
       debug: true,
