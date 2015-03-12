@@ -74,6 +74,15 @@ describe('lib/build.js', function() {
     assert(dest, 'global');
   });
 
+  it('dynamic', function*() {
+    yield build({
+      debug: true,
+      cwd: join(fixtures, 'dynamic'),
+      dest: dest
+    });
+    assert(dest, 'dynamic');
+  });
+
   it('idleading', function*() {
     yield build({
       debug: true,
