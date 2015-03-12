@@ -92,7 +92,7 @@ describe('lib/build.js', function() {
     assert(dest, 'idleading');
   });
 
-  it('require css', function*() {
+  xit('require css', function*() {
     yield build({
       debug: true,
       cwd: join(fixtures, 'require-css'),
@@ -158,15 +158,6 @@ function assert(actual, expect) {
       if (fs.statSync(filepath).isFile()) {
         var c = fs.readFileSync(filepath).toString();
         var ec = fs.readFileSync(join(expect, file)).toString();
-
-        // Clean local user path
-        var cwd = process.cwd();
-        var re = new RegExp(cwd, 'g');
-        if (c.indexOf(cwd) > -1) {
-          c = c.replace(re, '');
-          ec = ec.replace(re, '');
-        }
-
         c.should.eql(ec);
       }
     });
