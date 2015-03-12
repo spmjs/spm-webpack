@@ -52,6 +52,14 @@ describe('lib/build.js', function() {
     assert(dest, 'babel');
   });
 
+  it('handlebars', function*() {
+    yield build({
+      cwd: join(fixtures, 'handlebars'),
+      dest: dest
+    });
+    assert(dest, 'handlebars');
+  });
+
   it('global', function*() {
     yield build({
       cwd: join(fixtures, 'global'),
