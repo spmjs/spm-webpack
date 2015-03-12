@@ -20,6 +20,7 @@ describe('lib/build.js', function() {
 
   it('js entry', function*() {
     yield build({
+      debug: true,
       cwd: join(fixtures, 'js-entry'),
       dest: dest
     });
@@ -28,6 +29,7 @@ describe('lib/build.js', function() {
 
   it('js entry umd', function*() {
     yield build({
+      debug: true,
       cwd: join(fixtures, 'js-entry'),
       dest: dest,
       umd: 'Foo'
@@ -37,6 +39,7 @@ describe('lib/build.js', function() {
 
   it('js entry with no package.json', function*() {
     yield build({
+      debug: true,
       cwd: join(fixtures, 'js-entry-no-pkg'),
       dest: dest,
       entry: ['a.js']
@@ -46,6 +49,7 @@ describe('lib/build.js', function() {
 
   it('babel', function*() {
     yield build({
+      debug: true,
       cwd: join(fixtures, 'babel'),
       dest: dest
     });
@@ -54,6 +58,7 @@ describe('lib/build.js', function() {
 
   it('handlebars', function*() {
     yield build({
+      debug: true,
       cwd: join(fixtures, 'handlebars'),
       dest: dest
     });
@@ -62,6 +67,7 @@ describe('lib/build.js', function() {
 
   it('global', function*() {
     yield build({
+      debug: true,
       cwd: join(fixtures, 'global'),
       dest: dest
     });
@@ -70,6 +76,7 @@ describe('lib/build.js', function() {
 
   it('require css', function*() {
     yield build({
+      debug: true,
       cwd: join(fixtures, 'require-css'),
       dest: dest
     });
@@ -78,6 +85,7 @@ describe('lib/build.js', function() {
 
   it('require css extract', function*() {
     yield build({
+      debug: true,
       cwd: join(fixtures, 'require-css'),
       dest: dest,
       extractCSS: true
@@ -85,8 +93,18 @@ describe('lib/build.js', function() {
     assert(dest, 'require-css-extract');
   });
 
+  it('min (compress)', function*() {
+    yield build({
+      cwd: join(fixtures, 'require-css'),
+      dest: dest,
+      extractCSS: true
+    });
+    assert(dest, 'require-css-min');
+  });
+
   it('require css autoprefixer', function*() {
     yield build({
+      debug: true,
       cwd: join(fixtures, 'require-css-autoprefixer'),
       dest: dest
     });
@@ -95,6 +113,7 @@ describe('lib/build.js', function() {
 
   it('require less extract', function*() {
     yield build({
+      debug: true,
       cwd: join(fixtures, 'require-less'),
       dest: dest,
       extractCSS: true
@@ -104,6 +123,7 @@ describe('lib/build.js', function() {
 
   it('jsx', function*() {
     yield build({
+      debug: true,
       cwd: join(fixtures, 'jsx'),
       dest: dest
     });
