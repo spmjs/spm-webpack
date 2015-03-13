@@ -92,6 +92,15 @@ describe('lib/build.js', function() {
     assert(dest, 'idleading');
   });
 
+  it('copy', function*() {
+    yield build({
+      debug: true,
+      cwd: join(fixtures, 'copy'),
+      dest: dest
+    });
+    assert(dest, 'copy');
+  });
+
   xit('require css', function*() {
     yield build({
       debug: true,
