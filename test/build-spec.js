@@ -122,6 +122,16 @@ describe('lib/build.js', function() {
     assert(dest, 'hash');
   });
 
+  it('vendor', function*() {
+    yield build({
+      debug: true,
+      cwd: join(fixtures, 'js-entry'),
+      dest: dest,
+      vendor: ['a']
+    });
+    assert(dest, 'js-entry-vendor');
+  });
+
   xit('require css', function*() {
     yield build({
       debug: true,
