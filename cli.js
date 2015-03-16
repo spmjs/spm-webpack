@@ -4,8 +4,7 @@
 
 require('colorful').colorful();
 require('gnode');
-require('6to5/register')({
-  ignore: '',
+require('babel-core/register')({
   only: /scripts-hook\/_index/
 });
 
