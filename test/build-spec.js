@@ -169,6 +169,20 @@ describe('lib/build.js', function() {
     assert(dest, 'jsx');
   });
 
+  describe('scripts', function() {
+
+    afterEach(function() {
+      rimraf.sync(join(fixtures, 'scripts/index.js'));
+    });
+
+    it('with scripts', function* () {
+      process.chdir(join(fixtures, 'scripts'));
+      yield require('exeq')('node --harmony ' + join(__dirname, '../cli.js'));
+      fs.readFileSync(join(fixtures, 'scripts', 'index.js'), 'utf-8').should.be.equal('1\n2\n3\n');
+    });
+
+  });
+
 });
 
 function assert(actual, expect) {
