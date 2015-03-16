@@ -113,7 +113,7 @@ describe('lib/build.js', function() {
     assert(dest, 'copy');
   });
 
-  it('hash', function*() {
+  xit('hash', function*() {
     yield build({
       debug: true,
       cwd: join(fixtures, 'hash'),
