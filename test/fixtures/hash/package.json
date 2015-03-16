@@ -1,0 +1,9 @@
+{
+  "spm": {
+    "output": [
+      "a.js"
+    ],
+    "extractCSS": true,
+    "hash": true
+  }
+}

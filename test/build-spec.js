@@ -113,6 +113,15 @@ describe('lib/build.js', function() {
     assert(dest, 'copy');
   });
 
+  it('hash', function*() {
+    yield build({
+      debug: true,
+      cwd: join(fixtures, 'hash'),
+      dest: dest
+    });
+    assert(dest, 'hash');
+  });
+
   xit('require css', function*() {
     yield build({
       debug: true,
