@@ -25,6 +25,7 @@ program
   .option('--umd [umd]', 'UMD-wrapped version with given global name')
   .option('--global <global>', 'replace package name to global variable, format jquery:$,underscore:_')
   .option('--debug', 'build files without compress')
+  .option('--verbose', 'show more logging')
   .option('--no-color', 'disable colorful print')
   .option('--no-install', 'disable install')
   .parse(process.argv);
