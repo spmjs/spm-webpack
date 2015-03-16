@@ -141,6 +141,15 @@ describe('lib/build.js', function() {
     assert(dest, 'common');
   });
 
+  it('umd', function*() {
+    yield build({
+      debug: true,
+      cwd: join(fixtures, 'umd'),
+      dest: dest
+    });
+    assert(dest, 'umd');
+  });
+
   xit('require css', function*() {
     yield build({
       debug: true,
