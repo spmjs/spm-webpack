@@ -1,0 +1,6 @@
+{
+  "spm": {
+    "output": ["a.js", "b.js"],
+    "common": true
+  }
+}

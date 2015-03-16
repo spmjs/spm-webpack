@@ -132,6 +132,15 @@ describe('lib/build.js', function() {
     assert(dest, 'js-entry-vendor');
   });
 
+  it('common', function*() {
+    yield build({
+      debug: true,
+      cwd: join(fixtures, 'common'),
+      dest: dest
+    });
+    assert(dest, 'common');
+  });
+
   xit('require css', function*() {
     yield build({
       debug: true,
