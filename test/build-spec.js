@@ -4,7 +4,7 @@ var join = require('path').join;
 var thunkify = require('thunkify');
 var rimraf = require('rimraf');
 var glob = require('glob');
-var fs = require('fs');
+var fs = require('fs-extra');
 
 var fixtures = join(__dirname, 'fixtures');
 var dest = join(fixtures, 'tmp');
@@ -45,6 +45,18 @@ describe('lib/build.js', function() {
       entry: ['a.js']
     });
     assert(dest, 'js-entry-no-pkg');
+  });
+
+  it('clean', function*() {
+    fs.mkdirpSync(dest);
+    fs.writeFileSync(join(dest, 'clean.js'), 'abc', 'utf-8');
+    yield build({
+      debug: true,
+      cwd: join(fixtures, 'copy'),
+      dest: dest,
+      force: true
+    });
+    assert(dest, 'copy');
   });
 
   it('babel', function*() {
