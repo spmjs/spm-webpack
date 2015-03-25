@@ -54,7 +54,7 @@ describe('lib/build.js', function() {
       debug: true,
       cwd: join(fixtures, 'copy'),
       dest: dest,
-      force: true
+      clean: true
     });
     assert(dest, 'copy');
   });

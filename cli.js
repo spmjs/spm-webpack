@@ -20,7 +20,8 @@ program
   .option('-I, --input-directory <dir>', 'input directory, default: current working directory')
   .option('-O, --output-directory <dir>', 'output directory, default: dist')
   .option('-o, --output-file <file>', 'output file')
-  .option('-f, --force', 'force to clean dest directory first')
+  .option('-f, --force', 'force install dependencies from registry')
+  .option('-c, --clean', 'clean dest directory first')
   .option('-r, --registry <url>', 'registry url of repository server')
   .option('--umd [umd]', 'UMD-wrapped version with given global name')
   .option('--global <global>', 'replace package name to global variable, format jquery:$,underscore:_')
@@ -59,6 +60,7 @@ var args = {
   registry: program.registry || (pkg.spm && pkg.spm.registry),
 
   force: program.force,
+  clean: program.clean,
   install: program.install,
 
   debug: program.debug,
