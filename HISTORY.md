@@ -2,7 +2,7 @@
 
 ---
 
-## 0.2.0 (in dev)
+## 0.1.1
 
 - keep output filepath (no flatten)
 - add clean param, for deleting dest directory before build
