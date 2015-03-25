@@ -4,19 +4,15 @@
 
 require('colorful').colorful();
 require('gnode');
-require('babel-core/register')({
-  only: /scripts-hook\/_index/
-});
 
 var program = require('commander');
 var log = require('spm-log');
 var join = require('path').join;
 var exists = require('fs').existsSync;
 var readFile = require('fs').readFileSync;
-var build = require('./lib/build');
-var hook = require('scripts-hook');
 
 program
+  .version(require('./package').version, '-v, --version')
   .option('-I, --input-directory <dir>', 'input directory, default: current working directory')
   .option('-O, --output-directory <dir>', 'output directory, default: dist')
   .option('-o, --output-file <file>', 'output file')
@@ -72,8 +68,13 @@ if (entry && entry.length) {
   args.entry = entry;
 }
 
+require('babel-core/register')({
+  only: /scripts-hook\/_index/
+});
+var hook = require('scripts-hook');
 var scripts = pkg && pkg.spm && pkg.spm.scripts || {};
 hook(scripts, 'build', function(done) {
+  var build = require('./lib/build');
   build(args, done);
 }).then(function() {
   log.info('finish', info + showDiff(begin));
