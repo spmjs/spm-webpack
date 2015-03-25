@@ -1,0 +1,8 @@
+{
+  "spm": {
+    "output": [
+      "a/a.js",
+      "a/a.html"
+    ]
+  }
+}

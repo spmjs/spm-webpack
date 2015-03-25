@@ -4,6 +4,7 @@
 
 ## 0.2.0 (in dev)
 
+- keep output filepath (no flatten)
 - add clean param, for deleting dest directory before build
 - exports getWebpackOpts, for spm-webpack-server
 - transform jsx with harmony 

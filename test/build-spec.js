@@ -206,6 +206,15 @@ describe('lib/build.js', function() {
     assert(dest, 'jsx');
   });
 
+  it('keep-filepath', function*() {
+    yield build({
+      debug: true,
+      cwd: join(fixtures, 'keep-filepath'),
+      dest: dest
+    });
+    assert(dest, 'keep-filepath');
+  });
+
   describe('scripts', function() {
 
     afterEach(function() {
