@@ -2,6 +2,14 @@
 
 ---
 
+## 0.1.2
+
+- deps: css-loader -> spmcss-loader
+  - delete progid contained filter
+  - parse `@import 'b'` as module
+- add `output` helper for handlebars
+- improve performance
+
 ## 0.1.1
 
 - keep output filepath (no flatten)
