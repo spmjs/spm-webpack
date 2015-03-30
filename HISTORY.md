@@ -2,6 +2,10 @@
 
 ---
 
+## 0.1.3
+
+- fix: generate files with name and version
+
 ## 0.1.2
 
 - deps: css-loader -> spmcss-loader
