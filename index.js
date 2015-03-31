@@ -6,3 +6,4 @@ exports.getFiles = require('./lib/getFiles');
 exports.logArgs = require('./lib/logArgs');
 exports.SPMModuleParser = require('./lib/SPMModuleParser');
 exports.SPMWebpackPlugin = require('./lib/SPMWebpackPlugin');
+exports.webpack = require('webpack');
