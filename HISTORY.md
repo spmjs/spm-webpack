@@ -2,6 +2,14 @@
 
 ---
 
+## 0.1.4
+
+- deps: upgrade spmcss-loader to 0.9.2
+  - parse `@import 'b'` as relative, parse `@import '~b'` as module
+- fix: main file path error
+- chore: exports webpack
+- chore: get pkg using fs.readFile (pkg maybe modified when using require)
+
 ## 0.1.3
 
 - fix: generate files with name and version
