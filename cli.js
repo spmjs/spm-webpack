@@ -15,9 +15,9 @@ program
   .version(require('./package').version, '-v, --version')
   .option('-I, --input-directory <dir>', 'input directory, default: current working directory')
   .option('-O, --output-directory <dir>', 'output directory, default: dist')
-  .option('-o, --output-file <file>', 'output file')
   .option('-f, --force', 'force install dependencies from registry')
   .option('-c, --clean', 'clean dest directory first')
+  .option('-w, --watch', 'watch mode')
   .option('-r, --registry <url>', 'registry url of repository server')
   .option('--umd [umd]', 'UMD-wrapped version with given global name')
   .option('--global <global>', 'replace package name to global variable, format jquery:$,underscore:_')
@@ -49,7 +49,6 @@ log.info('start', info);
 var args = {
   dest: program.outputDirectory,
   cwd: cwd,
-  outputFile: program.outputFile,
 
   umd: program.umd,
   global: program.global,
@@ -57,6 +56,7 @@ var args = {
 
   force: program.force,
   clean: program.clean,
+  watch: program.watch,
   install: program.install,
 
   debug: program.debug,
