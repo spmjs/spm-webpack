@@ -2,6 +2,14 @@
 
 ---
 
+## 0.2.0
+
+- support watch mode
+- flatten output path
+- copy font files
+- resolve node-modules with node-resolve
+- get pkg using fs.readFile instead of require
+
 ## 0.1.4
 
 - deps: upgrade spmcss-loader to 0.9.2
