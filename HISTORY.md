@@ -2,9 +2,10 @@
 
 ---
 
-## 0.3.1
+## 0.3.0 (in dev)
 
 - don't flatten output path
+- feat(css): fix css path before build complete, Fix #5
 
 ## 0.2.1
 

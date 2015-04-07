@@ -215,6 +215,15 @@ describe('lib/build.js', function() {
     assert(dest, 'keep-filepath');
   });
 
+  it('fix-css-resources-path', function*() {
+    yield build({
+      debug: true,
+      cwd: join(fixtures, 'fix-css-resources-path'),
+      dest: dest
+    });
+    assert(dest, 'fix-css-resources-path');
+  });
+
   describe('scripts', function() {
 
     afterEach(function() {
