@@ -2,6 +2,10 @@
 
 ---
 
+## 0.3.2
+
+- feat(build): support require json file
+
 ## 0.3.1
 
 - fix: jsx2-loader version
