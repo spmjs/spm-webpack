@@ -6,6 +6,9 @@
 
 - don't flatten output path
 - feat(css): fix css path before build complete, Fix #5
+- deps: jsx-loader to jsx2-loader, Don't transform js file if no @jsx progma
+- deps: upgrade babel-loader to 0.5
+- fix: babel opts Unknown Option
 
 ## 0.2.1
 
