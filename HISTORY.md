@@ -2,6 +2,10 @@
 
 ---
 
+## 0.1.5
+
+- feat(build): support define plugin
+
 ## 0.1.4
 
 - deps: upgrade spmcss-loader to 0.9.2
