@@ -2,7 +2,7 @@
 
 ---
 
-## 0.3.0 (in dev)
+## 0.3.0
 
 - don't flatten output path
 - feat(css): fix css path before build complete, Fix #5
