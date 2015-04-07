@@ -2,6 +2,10 @@
 
 ---
 
+## 0.3.1
+
+- fix: jsx2-loader version
+
 ## 0.3.0
 
 - don't flatten output path
