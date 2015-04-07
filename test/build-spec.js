@@ -206,7 +206,7 @@ describe('lib/build.js', function() {
     assert(dest, 'jsx');
   });
 
-  xit('keep-filepath', function*() {
+  it('keep-filepath', function*() {
     yield build({
       debug: true,
       cwd: join(fixtures, 'keep-filepath'),

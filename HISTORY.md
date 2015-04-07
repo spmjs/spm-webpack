@@ -2,6 +2,10 @@
 
 ---
 
+## 0.3.1
+
+- don't flatten output path
+
 ## 0.2.1
 
 - support define plugin
