@@ -2,6 +2,10 @@
 
 ---
 
+## 0.2.1
+
+- support define plugin
+
 ## 0.2.0
 
 - support watch mode
