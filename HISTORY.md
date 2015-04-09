@@ -2,6 +2,10 @@
 
 ---
 
+## 0.3.3
+
+- feat: turn off sourcemap for uglify by default
+
 ## 0.3.2
 
 - feat(build): support require json file
