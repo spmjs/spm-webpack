@@ -59,7 +59,8 @@
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	
+	/** @jsx React.DOM */
+
 	module.exports = React.createClass({displayName: "exports",
 	  render: function() {
 	    return React.createElement("div", {className: "foo"});
