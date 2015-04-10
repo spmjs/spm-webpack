@@ -2,9 +2,10 @@
 
 ---
 
-## 0.3.3
+## 0.3.3 ( in dev)
 
 - feat: turn off sourcemap for uglify by default
+- refactor: get args with spm-argv
 
 ## 0.3.2
 
