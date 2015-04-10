@@ -47,8 +47,9 @@ console.log();
 log.info('start', info);
 
 var args = {
-  dest: program.outputDirectory,
   cwd: cwd,
+  pkg: pkg,
+  dest: program.outputDirectory,
 
   umd: program.umd,
   global: program.global,
@@ -59,13 +60,11 @@ var args = {
   watch: program.watch,
   install: program.install,
 
-  debug: program.debug,
-
-  pkg: pkg
+  debug: program.debug
 };
 
 if (entry && entry.length) {
-  args.entry = entry;
+  args.build.entry = entry;
 }
 
 require('babel-core/register')({
