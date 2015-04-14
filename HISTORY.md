@@ -6,6 +6,7 @@
 
 - fix: main file entry don't work if have `./` prefix
 - feat: support custom loader
+- feat: optmize error output
 
 ## 0.3.3
 
