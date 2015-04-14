@@ -2,7 +2,7 @@
 
 ---
 
-## 0.3.4 (in dev)
+## 0.3.4
 
 - fix: main file entry don't work if have `./` prefix
 - feat: support custom loader
