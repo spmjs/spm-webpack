@@ -5,6 +5,7 @@
 ## 0.3.4 (in dev)
 
 - fix: main file entry don't work if have `./` prefix
+- feat: support custom loader
 
 ## 0.3.3
 

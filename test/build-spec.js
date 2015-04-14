@@ -224,6 +224,30 @@ describe('lib/build.js', function() {
     assert(dest, 'fix-css-resources-path');
   });
 
+  describe('custom-loader', function() {
+
+    var oldCwd;
+
+    before(function() {
+      oldCwd = process.cwd();
+      process.chdir(join(fixtures, 'custom-loader'));
+    });
+
+    after(function() {
+      process.chdir(oldCwd);
+    });
+
+    it('custom-loader', function*() {
+      yield build({
+        debug: true,
+        cwd: join(fixtures, 'custom-loader'),
+        dest: dest
+      });
+      assert(dest, 'custom-loader');
+    });
+
+  });
+
   describe('scripts', function() {
 
     afterEach(function() {
