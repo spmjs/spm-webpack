@@ -64,7 +64,7 @@ var args = {
 };
 
 if (entry && entry.length) {
-  args.build.entry = entry;
+  args.entry = entry;
 }
 
 require('babel-core/register')({

@@ -2,6 +2,10 @@
 
 ---
 
+## 0.3.5
+
+- fix: error when pass entry file
+
 ## 0.3.4
 
 - fix: main file entry don't work if have `./` prefix
