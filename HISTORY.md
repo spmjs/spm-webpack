@@ -2,6 +2,10 @@
 
 ---
 
+## 0.3.4 (in dev)
+
+- fix: main file entry don't work if have `./` prefix
+
 ## 0.3.3
 
 - feat: turn off sourcemap for uglify by default
