@@ -1,0 +1,17 @@
+{
+  "spm": {
+    "output": [
+      "a.js"
+    ],
+    "build": {
+      "define": {
+        "DEBUG": false
+      }
+    },
+    "server": {
+      "define": {
+        "DEBUG": true
+      }
+    }
+  }
+}

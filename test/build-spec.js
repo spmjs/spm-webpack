@@ -224,6 +224,15 @@ describe('lib/build.js', function() {
     assert(dest, 'fix-css-resources-path');
   });
 
+  it('define', function*() {
+    yield build({
+      debug: true,
+      cwd: join(fixtures, 'define'),
+      dest: dest
+    });
+    assert(dest, 'define');
+  });
+
   describe('custom-loader', function() {
 
     var oldCwd;
