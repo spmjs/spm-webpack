@@ -233,6 +233,15 @@ describe('lib/build.js', function() {
     assert(dest, 'define');
   });
 
+  it('base64', function*() {
+    yield build({
+      debug: true,
+      cwd: join(fixtures, 'base64'),
+      dest: dest
+    });
+    assert(dest, 'base64');
+  });
+
   describe('custom-loader', function() {
 
     var oldCwd;

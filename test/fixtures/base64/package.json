@@ -1,0 +1,13 @@
+{
+  "spm": {
+    "output": [
+      "a.js"
+    ],
+    "build": {
+      "extractCSS": true,
+      "base64": {
+        "limit": "10000"
+      }
+    }
+  }
+}
