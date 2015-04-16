@@ -2,6 +2,10 @@
 
 ---
 
+## 0.3.6
+
+- feat: support base64
+
 ## 0.3.5
 
 - fix: error when pass entry file

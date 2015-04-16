@@ -1,6 +1,6 @@
 {
   "name": "spm-webpack",
-  "version": "0.3.5t",
+  "version": "0.3.6",
   "description": "SPM project bundler based on webpack.",
   "dependencies": {
     "autoprefixer-loader": "~1.2.0",
