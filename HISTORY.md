@@ -2,6 +2,10 @@
 
 ---
 
+## 0.3.7 (in dev)
+
+- fix: winPath error when parse module
+
 ## 0.3.6
 
 - feat: support base64
