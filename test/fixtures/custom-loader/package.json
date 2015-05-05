@@ -1,6 +1,6 @@
 {
   "spm": {
-    "output": ["a.js"],
+    "output": ["src/a.js"],
     "build": {
       "loader": {
         ".js": "+./foo",

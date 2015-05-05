@@ -2,6 +2,10 @@
 
 ---
 
+## 0.3.8 (in dev)
+
+- fix: custom loader resove error if loader is local
+
 ## 0.3.7
 
 - fix: winPath error when parse module
