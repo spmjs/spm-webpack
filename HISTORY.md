@@ -2,7 +2,7 @@
 
 ---
 
-## 0.3.7 (in dev)
+## 0.3.7
 
 - fix: winPath error when parse module
 - fix: custom loader for css don't work
