@@ -3,8 +3,10 @@
     "output": ["a.js"],
     "build": {
       "loader": {
-        ".js": "+./foo"
-      }
+        ".js": "+./foo",
+        ".css": "+./foo"
+      },
+      "extractCSS": true
     }
   }
 }

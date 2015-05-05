@@ -5,6 +5,7 @@
 ## 0.3.7 (in dev)
 
 - fix: winPath error when parse module
+- fix: custom loader for css don't work
 
 ## 0.3.6
 
