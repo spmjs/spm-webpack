@@ -2,8 +2,9 @@
 
 ---
 
-## 0.3.8 (in dev)
+## 0.3.8
 
+- fix: don't validate html for tpl files
 - fix: custom loader resove error if loader is local
 
 ## 0.3.7
