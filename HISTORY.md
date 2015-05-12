@@ -2,6 +2,10 @@
 
 ---
 
+## 0.3.9
+
+- feat: support custom loader for less
+
 ## 0.3.8
 
 - fix: don't validate html for tpl files

@@ -266,6 +266,30 @@ describe('lib/build.js', function() {
 
   });
 
+  describe('custom-loader-less', function() {
+
+    var oldCwd;
+
+    before(function() {
+      oldCwd = process.cwd();
+      process.chdir(join(fixtures, 'custom-loader-less'));
+    });
+
+    after(function() {
+      process.chdir(oldCwd);
+    });
+
+    it('custom-loader-less', function*() {
+      yield build({
+        debug: true,
+        cwd: join(fixtures, 'custom-loader-less'),
+        dest: dest
+      });
+      assert(dest, 'custom-loader-less');
+    });
+
+  });
+
   describe('scripts', function() {
 
     afterEach(function() {
