@@ -1,0 +1,10 @@
+{
+  "name": "hello",
+  "spm": {
+    "output": [
+      "./a/a.js",
+      "./d.js"
+    ],
+    "extractCSS": true
+  }
+}
