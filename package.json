@@ -32,6 +32,7 @@
     "spm-log": "~0.1.2",
     "spmcss-loader": "~0.9.2",
     "spmtpl-loader": "~0.1.0",
+    "atpl-loader": "~0.1.0",
     "style-loader": "~0.8.3",
     "uniq": "~1.0.1",
     "url-loader": "~0.5.5",
