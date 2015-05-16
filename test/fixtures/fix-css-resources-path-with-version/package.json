@@ -1,0 +1,10 @@
+{
+  "version": "0.0.1",
+  "spm": {
+    "output": [
+      "./a/a.js",
+      "./d.js"
+    ],
+    "extractCSS": true
+  }
+}

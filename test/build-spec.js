@@ -224,6 +224,34 @@ describe('lib/build.js', function() {
     assert(dest, 'fix-css-resources-path');
   });
 
+  it('fix-css-resources-path-with-name', function*() {
+    yield build({
+      debug: true,
+      cwd: join(fixtures, 'fix-css-resources-path-with-name'),
+      dest: dest
+    });
+    assert(dest, 'fix-css-resources-path-with-name');
+  });
+
+
+  it('fix-css-resources-path-with-version', function*() {
+    yield build({
+      debug: true,
+      cwd: join(fixtures, 'fix-css-resources-path-with-version'),
+      dest: dest
+    });
+    assert(dest, 'fix-css-resources-path-with-version');
+  });
+
+  it('fix-css-resources-path-with-name-and-version', function*() {
+    yield build({
+      debug: true,
+      cwd: join(fixtures, 'fix-css-resources-path-with-name-and-version'),
+      dest: dest
+    });
+    assert(dest, 'fix-css-resources-path-with-name-and-version');
+  });
+
   it('define', function*() {
     yield build({
       debug: true,
