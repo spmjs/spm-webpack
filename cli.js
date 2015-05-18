@@ -35,7 +35,7 @@ try {
   var pkg = exists(file) && JSON.parse(readFile(file, 'utf-8')) || {};
 } catch(e) {
   log.error('error', 'package.json parse error');
-  if (program.verbose) console.log(e.stack);
+  console.log(e.stack);
   process.exit(1);
 }
 var entry = program.args;
