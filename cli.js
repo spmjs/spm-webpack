@@ -31,7 +31,13 @@ log.config(program);
 
 var cwd = join(process.cwd(), program.inputDirectory || '');
 var file = join(cwd, 'package.json');
-var pkg = exists(file) && JSON.parse(readFile(file, 'utf-8')) || {};
+try {
+  var pkg = exists(file) && JSON.parse(readFile(file, 'utf-8')) || {};
+} catch(e) {
+  log.error('error', 'package.json parse error');
+  if (program.verbose) console.log(e.stack);
+  process.exit(1);
+}
 var entry = program.args;
 
 var info = '';
