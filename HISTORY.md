@@ -2,6 +2,11 @@
 
 ---
 
+## 0.3.10
+
+- chore: improve error output
+- fix: image url path problem in css file, [spmjs/spm#1293](https://github.com/spmjs/spm/issues/1293)
+
 ## 0.3.9
 
 - feat: support custom loader for less
