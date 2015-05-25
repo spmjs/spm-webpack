@@ -44,15 +44,22 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
+	__webpack_require__(2);
 	__webpack_require__(1);
 	__webpack_require__(3);
-	__webpack_require__(2);
 
 	console.log('entry');
 
 
 /***/ },
 /* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+	console.log('relative');
+
+
+/***/ },
+/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
@@ -62,17 +69,10 @@
 
 
 /***/ },
-/* 2 */
-/***/ function(module, exports, __webpack_require__) {
-
-	console.log('private in a');
-
-
-/***/ },
 /* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
-	console.log('relative');
+	console.log('private in a');
 
 
 /***/ },

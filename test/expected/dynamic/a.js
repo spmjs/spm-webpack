@@ -27,7 +27,7 @@
 /******/ 	// "0" means "already loaded"
 /******/ 	// Array means "loading", array contains callbacks
 /******/ 	var installedChunks = {
-/******/ 		0:0
+/******/ 		1:0
 /******/ 	};
 
 /******/ 	// The require function
@@ -97,7 +97,7 @@
 	
 	console.log('a');
 
-	__webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(1)]; (function(b) {
+	__webpack_require__.e/* require */(0, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(1)]; (function(b) {
 	  b('a');
 	}.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));});
 

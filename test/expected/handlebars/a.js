@@ -45,7 +45,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	
-	var tpl = __webpack_require__(1);
+	var tpl = __webpack_require__(5);
 	console.log(tpl({title:1}));
 
 
@@ -53,74 +53,9 @@
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Handlebars = __webpack_require__(2);
-	module.exports = (Handlebars["default"] || Handlebars).template(function (Handlebars,depth0,helpers,partials,data) {
-	  this.compilerInfo = [4,'>= 1.0.0'];
-	helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-	  var buffer = "", stack1, helper, functionType="function", escapeExpression=this.escapeExpression;
-
-
-	  buffer += "hello ";
-	  if (helper = helpers.title) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-	  else { helper = (depth0 && depth0.title); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-	  buffer += escapeExpression(stack1)
-	    + "\n";
-	  return buffer;
-	  });
-
-/***/ },
-/* 2 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// Create a simple path alias to allow browserify to resolve
-	// the runtime on a supported path.
-	module.exports = __webpack_require__(3);
-
-
-/***/ },
-/* 3 */
-/***/ function(module, exports, __webpack_require__) {
-
 	"use strict";
-	/*globals Handlebars: true */
-	var base = __webpack_require__(4);
-
-	// Each of these augment the Handlebars object. No need to setup here.
-	// (This is done to easily share code between commonjs and browse envs)
-	var SafeString = __webpack_require__(5)["default"];
-	var Exception = __webpack_require__(6)["default"];
-	var Utils = __webpack_require__(7);
-	var runtime = __webpack_require__(8);
-
-	// For compatibility and usage outside of module systems, make the Handlebars object a namespace
-	var create = function() {
-	  var hb = new base.HandlebarsEnvironment();
-
-	  Utils.extend(hb, base);
-	  hb.SafeString = SafeString;
-	  hb.Exception = Exception;
-	  hb.Utils = Utils;
-
-	  hb.VM = runtime;
-	  hb.template = function(spec) {
-	    return runtime.template(spec, hb);
-	  };
-
-	  return hb;
-	};
-
-	var Handlebars = create();
-	Handlebars.create = create;
-
-	exports["default"] = Handlebars;
-
-/***/ },
-/* 4 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var Utils = __webpack_require__(7);
-	var Exception = __webpack_require__(6)["default"];
+	var Utils = __webpack_require__(3);
+	var Exception = __webpack_require__(2)["default"];
 
 	var VERSION = "1.3.0";
 	exports.VERSION = VERSION;var COMPILER_REVISION = 4;
@@ -300,23 +235,7 @@
 	exports.createFrame = createFrame;
 
 /***/ },
-/* 5 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	// Build out our basic SafeString type
-	function SafeString(string) {
-	  this.string = string;
-	}
-
-	SafeString.prototype.toString = function() {
-	  return "" + this.string;
-	};
-
-	exports["default"] = SafeString;
-
-/***/ },
-/* 6 */
+/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -349,12 +268,12 @@
 	exports["default"] = Exception;
 
 /***/ },
-/* 7 */
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	/*jshint -W004 */
-	var SafeString = __webpack_require__(5)["default"];
+	var SafeString = __webpack_require__(4)["default"];
 
 	var escape = {
 	  "&": "&amp;",
@@ -430,14 +349,86 @@
 	exports.isEmpty = isEmpty;
 
 /***/ },
-/* 8 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Utils = __webpack_require__(7);
-	var Exception = __webpack_require__(6)["default"];
-	var COMPILER_REVISION = __webpack_require__(4).COMPILER_REVISION;
-	var REVISION_CHANGES = __webpack_require__(4).REVISION_CHANGES;
+	// Build out our basic SafeString type
+	function SafeString(string) {
+	  this.string = string;
+	}
+
+	SafeString.prototype.toString = function() {
+	  return "" + this.string;
+	};
+
+	exports["default"] = SafeString;
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Handlebars = __webpack_require__(8);
+	module.exports = (Handlebars["default"] || Handlebars).template(function (Handlebars,depth0,helpers,partials,data) {
+	  this.compilerInfo = [4,'>= 1.0.0'];
+	helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+	  var buffer = "", stack1, helper, functionType="function", escapeExpression=this.escapeExpression;
+
+
+	  buffer += "hello ";
+	  if (helper = helpers.title) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+	  else { helper = (depth0 && depth0.title); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+	  buffer += escapeExpression(stack1)
+	    + "\n";
+	  return buffer;
+	  });
+
+/***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	/*globals Handlebars: true */
+	var base = __webpack_require__(1);
+
+	// Each of these augment the Handlebars object. No need to setup here.
+	// (This is done to easily share code between commonjs and browse envs)
+	var SafeString = __webpack_require__(4)["default"];
+	var Exception = __webpack_require__(2)["default"];
+	var Utils = __webpack_require__(3);
+	var runtime = __webpack_require__(7);
+
+	// For compatibility and usage outside of module systems, make the Handlebars object a namespace
+	var create = function() {
+	  var hb = new base.HandlebarsEnvironment();
+
+	  Utils.extend(hb, base);
+	  hb.SafeString = SafeString;
+	  hb.Exception = Exception;
+	  hb.Utils = Utils;
+
+	  hb.VM = runtime;
+	  hb.template = function(spec) {
+	    return runtime.template(spec, hb);
+	  };
+
+	  return hb;
+	};
+
+	var Handlebars = create();
+	Handlebars.create = create;
+
+	exports["default"] = Handlebars;
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var Utils = __webpack_require__(3);
+	var Exception = __webpack_require__(2)["default"];
+	var COMPILER_REVISION = __webpack_require__(1).COMPILER_REVISION;
+	var REVISION_CHANGES = __webpack_require__(1).REVISION_CHANGES;
 
 	function checkRevision(compilerInfo) {
 	  var compilerRevision = compilerInfo && compilerInfo[0] || 1,
@@ -570,6 +561,15 @@
 	exports.invokePartial = invokePartial;function noop() { return ""; }
 
 	exports.noop = noop;
+
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// Create a simple path alias to allow browserify to resolve
+	// the runtime on a supported path.
+	module.exports = __webpack_require__(6);
+
 
 /***/ }
 /******/ ]);
