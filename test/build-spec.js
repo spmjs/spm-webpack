@@ -5,6 +5,7 @@ var thunkify = require('thunkify');
 var rimraf = require('rimraf');
 var glob = require('glob');
 var fs = require('fs-extra');
+var basename = require('path').basename;
 
 var fixtures = join(__dirname, 'fixtures');
 var dest = join(fixtures, 'tmp');
@@ -339,10 +340,15 @@ function assert(actual, expect) {
   glob.sync('**/*', {cwd: actual})
     .forEach(function(file) {
       var filepath = join(actual, file);
+      var isImage = /\.(jpg|png|gif)$/.test(filepath);
       if (fs.statSync(filepath).isFile()) {
-        var c = fs.readFileSync(filepath).toString();
-        var ec = fs.readFileSync(join(expect, file)).toString();
-        c.should.eql(ec);
+        if (isImage) {
+          basename(filepath).should.be.equal(basename(join(expect, file)));
+        } else {
+          var c = fs.readFileSync(filepath).toString();
+          var ec = fs.readFileSync(join(expect, file)).toString();
+          c.should.eql(ec);
+        }
       }
     });
 }
