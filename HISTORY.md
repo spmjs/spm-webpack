@@ -2,6 +2,12 @@
 
 ---
 
+## 0.3.11
+
+- feat(build): add webpack.optimize.OccurenceOrderPlugin to reserve deps order
+- fix: vendor or common is enabled, Close [spmjs/spm#1315](https://github.com/spmjs/spm/issues/1315) and [spmjs/spm#1313](https://github.com/spmjs/spm/issues/1313)
+- fix: watch bug, Close [spmjs/spm#1293](https://github.com/spmjs/spm/issues/1293)
+
 ## 0.3.10
 
 - chore: improve error output
