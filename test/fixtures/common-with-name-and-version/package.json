@@ -1,0 +1,8 @@
+{
+  "name": "hello",
+  "version": "0.0.1",
+  "spm": {
+    "output": ["a.js", "b.js"],
+    "common": true
+  }
+}

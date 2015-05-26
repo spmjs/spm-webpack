@@ -133,6 +133,16 @@ describe('lib/build.js', function() {
     assert(dest, 'js-entry-vendor');
   });
 
+  it('vendor-with-name-and-version', function*() {
+    yield build({
+      debug: true,
+      cwd: join(fixtures, 'vendor-with-name-and-version'),
+      dest: dest,
+      vendor: ['a']
+    });
+    assert(dest, 'vendor-with-name-and-version');
+  });
+
   it('common', function*() {
     yield build({
       debug: true,
@@ -140,6 +150,15 @@ describe('lib/build.js', function() {
       dest: dest
     });
     assert(dest, 'common');
+  });
+
+  it('common-with-name-and-version', function*() {
+    yield build({
+      debug: true,
+      cwd: join(fixtures, 'common-with-name-and-version'),
+      dest: dest
+    });
+    assert(dest, 'common-with-name-and-version');
   });
 
   it('umd', function*() {
