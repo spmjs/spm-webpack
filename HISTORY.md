@@ -2,6 +2,10 @@
 
 ---
 
+## 0.3.12
+
+- fix: fixCSSpathPlugin bug which is mentioned in [spmjs/spm#1320](https://github.com/spmjs/spm/issues/1320), Close [spmjs/spm#1320](https://github.com/spmjs/spm/issues/1320)
+
 ## 0.3.11
 
 - feat(build): add webpack.optimize.OccurenceOrderPlugin to reserve deps order
