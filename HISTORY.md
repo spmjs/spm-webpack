@@ -2,6 +2,12 @@
 
 ---
 
+## 0.4.0
+
+- fix: output path error when have name and version
+- refactor: extract installDeps from getWebpackOpts
+- feat: support noInstall: true
+
 ## 0.3.12
 
 - fix: fixCSSpathPlugin bug which is mentioned in [spmjs/spm#1320](https://github.com/spmjs/spm/issues/1320), Close [spmjs/spm#1320](https://github.com/spmjs/spm/issues/1320)
