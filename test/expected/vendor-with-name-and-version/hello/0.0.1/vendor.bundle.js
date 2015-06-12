@@ -75,7 +75,7 @@
 /******/ 			script.type = 'text/javascript';
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
-/******/ 			script.src = __webpack_require__.p + "" + ({"1":"hello/0.0.1/test"}[chunkId]||chunkId) + ".js";
+/******/ 			script.src = __webpack_require__.p + "" + ({"1":"test"}[chunkId]||chunkId) + ".js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};
