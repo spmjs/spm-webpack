@@ -1,0 +1,11 @@
+{
+  "spm": {
+    "output": [
+      "a.css",
+      "b/a.css"
+    ],
+    "dependencies": {
+      "c": "~3.0.1"
+    }
+  }
+}

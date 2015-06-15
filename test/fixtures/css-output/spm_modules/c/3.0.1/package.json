@@ -1,0 +1,7 @@
+{
+  "name": "normalize.css",
+  "version": "3.0.1",
+  "spm": {
+    "main": "normalize.css"
+  }
+}
