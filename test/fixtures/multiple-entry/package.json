@@ -1,0 +1,16 @@
+{
+  "spm": {
+    "output": [
+      "a.js",
+      "a.css",
+      {
+        "name": "multiple.js",
+        "files": ["b.js", "c.js"]
+      },
+      {
+        "name": "multiple.css",
+        "files": ["b.css", "c.css"]
+      }
+    ]
+  }
+}

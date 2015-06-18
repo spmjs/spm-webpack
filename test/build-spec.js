@@ -281,6 +281,15 @@ describe('lib/build.js', function() {
     assert(dest, 'define');
   });
 
+  it('multiple-entry', function*() {
+    yield build({
+      debug: true,
+      cwd: join(fixtures, 'multiple-entry'),
+      dest: dest
+    });
+    assert(dest, 'multiple-entry');
+  });
+
   it('base64', function*() {
     yield build({
       debug: true,
