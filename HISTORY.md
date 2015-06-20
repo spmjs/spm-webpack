@@ -2,6 +2,12 @@
 
 ---
 
+## 0.5.0
+
+- feat: support css output
+- feat: support multiple entry
+- feat: exports installDeps
+
 ## 0.4.0
 
 - fix: output path error when have name and version
