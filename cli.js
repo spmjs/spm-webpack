@@ -64,7 +64,7 @@ var args = {
   force: program.force,
   clean: program.clean,
   watch: program.watch,
-  install: program.install,
+  noInstall: !program.install,
 
   debug: program.debug
 };
