@@ -2,7 +2,8 @@
   "spm": {
     "output": [
       "a.css",
-      "b/a.css"
+      "b/a.css",
+      "b.less"
     ],
     "dependencies": {
       "c": "~3.0.1"
