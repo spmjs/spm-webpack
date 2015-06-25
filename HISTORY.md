@@ -2,6 +2,10 @@
 
 ---
 
+## 0.5.1
+
+- feat: support less file in output
+
 ## 0.5.0
 
 - feat: support css output
