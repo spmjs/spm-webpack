@@ -2,6 +2,10 @@
 
 ---
 
+## 0.5.2
+
+- deps: unique babel-core's version
+
 ## 0.5.1
 
 - feat: support less file in output
