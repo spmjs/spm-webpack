@@ -1,0 +1,10 @@
+{
+  "spm": {
+    "output": ["a.css"],
+    "build": {
+      "loader": {
+        ".css": "+b$"
+      }
+    }
+  }
+}
