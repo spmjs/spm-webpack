@@ -308,13 +308,28 @@ describe('lib/build.js', function() {
     assert(dest, 'css-output');
   });
 
-  it('css-output-custom-loader', function*() {
-    yield build({
-      debug: true,
-      cwd: join(fixtures, 'css-output-custom-loader'),
-      dest: dest
+  describe('css-output-custom-loader', function() {
+
+    var oldCwd;
+
+    before(function() {
+      oldCwd = process.cwd();
+      process.chdir(join(fixtures, 'css-output-custom-loader'));
     });
-    assert(dest, 'css-output-custom-loader');
+
+    after(function() {
+      process.chdir(oldCwd);
+    });
+
+    it('css-output-custom-loader', function*() {
+      yield build({
+        debug: true,
+        cwd: join(fixtures, 'css-output-custom-loader'),
+        dest: dest
+      });
+      assert(dest, 'css-output-custom-loader');
+    });
+
   });
 
   describe('custom-loader', function() {
