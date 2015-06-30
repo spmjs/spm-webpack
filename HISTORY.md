@@ -2,6 +2,10 @@
 
 ---
 
+## 0.5.3
+
+- fix: css output files don't resolve custom loader properly
+
 ## 0.5.2
 
 - deps: unique babel-core's version
