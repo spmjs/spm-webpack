@@ -1,0 +1,12 @@
+
+@import "c.scss";
+
+$color: #121212;
+
+a {
+  color: $color;
+
+  .c {
+    background: url(b.png)
+  }
+}

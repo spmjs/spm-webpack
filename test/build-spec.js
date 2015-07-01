@@ -78,6 +78,15 @@ describe('lib/build.js', function() {
     assert(dest, 'handlebars');
   });
 
+  it('ejs', function*() {
+    yield build({
+      debug: true,
+      cwd: join(fixtures, 'ejs'),
+      dest: dest
+    });
+    assert(dest, 'ejs');
+  });
+
   it('global', function*() {
     yield build({
       debug: true,
@@ -187,6 +196,16 @@ describe('lib/build.js', function() {
       extractCSS: true
     });
     assert(dest, 'require-css-extract');
+  });
+
+  it('require sass extract', function*() {
+    yield build({
+      debug: true,
+      cwd: join(fixtures, 'require-sass'),
+      dest: dest,
+      extractCSS: true
+    });
+    assert(dest, 'require-sass-extract');
   });
 
   it('min (compress)', function*() {
