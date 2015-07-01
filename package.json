@@ -11,7 +11,7 @@
     "coffee-script": "~1.9.3",
     "colorful": "~2.1.0",
     "commander": "~2.7.1",
-    "css-resources": "~0.1.1",
+    "css-resources": "~0.2.0",
     "extend": "~2.0.0",
     "extract-text-webpack-plugin": "~0.3.8",
     "file-loader": "~0.8.1",
