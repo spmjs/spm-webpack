@@ -1,7 +1,8 @@
 {
   "spm": {
     "output": [
-      "a.js"
+      "a.js",
+      "a.css"
     ]
   }
 }
