@@ -2,6 +2,11 @@
 
 ---
 
+## 0.5.4
+
+- fix: node modules resolve, such as util and events
+- fix: css is not minified while having local url in background property
+
 ## 0.5.3
 
 - fix: css output files don't resolve custom loader properly
