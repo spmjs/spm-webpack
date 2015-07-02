@@ -308,6 +308,15 @@ describe('lib/build.js', function() {
     assert(dest, 'css-output');
   });
 
+  it('require-node-modules', function*() {
+    yield build({
+      debug: true,
+      cwd: join(fixtures, 'require-node-modules'),
+      dest: dest
+    });
+    assert(dest, 'require-node-modules');
+  });
+
   describe('css-output-custom-loader', function() {
 
     var oldCwd;
