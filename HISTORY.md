@@ -2,6 +2,10 @@
 
 ---
 
+## 0.5.5
+
+- deps: use css-loader@0.14 instead of spm-loader@0.9
+
 ## 0.5.4
 
 - fix: node modules resolve, such as util and events
