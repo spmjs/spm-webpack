@@ -2,6 +2,10 @@
 
 ---
 
+## 0.5.6
+
+- fix: no error print if have child error
+
 ## 0.5.5
 
 - deps: use css-loader@0.14 instead of spm-loader@0.9
