@@ -1,0 +1,8 @@
+{
+  "spm": {
+    "output": ["src/a.*"],
+    "build": {
+      "pathmap": ["^src/(.*)", "$1"]
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "spm": {
+    "output": ["src/a.css"]
+  }
+}

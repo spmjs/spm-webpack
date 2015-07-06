@@ -281,6 +281,24 @@ describe('lib/build.js', function() {
     assert(dest, 'define');
   });
 
+  it('css-output-background', function*() {
+    yield build({
+      debug: true,
+      cwd: join(fixtures, 'css-output-background'),
+      dest: dest
+    });
+    assert(dest, 'css-output-background');
+  });
+
+  it('pathmap', function*() {
+    yield build({
+      debug: true,
+      cwd: join(fixtures, 'pathmap'),
+      dest: dest
+    });
+    assert(dest, 'pathmap');
+  });
+
   it('multiple-entry', function*() {
     yield build({
       debug: true,
