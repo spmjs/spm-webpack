@@ -2,6 +2,10 @@
 
 ---
 
+## 0.5.7
+
+- feat: support pathmap for entry files
+
 ## 0.5.6
 
 - fix: no error print if have child error
