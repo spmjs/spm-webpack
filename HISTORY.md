@@ -2,6 +2,10 @@
 
 ---
 
+## 0.5.8
+
+- deps: add atpl-loader
+
 ## 0.5.7
 
 - feat: support pathmap for entry files
