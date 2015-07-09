@@ -1,6 +1,6 @@
 {
   "spm": {
-    "output": ["src/a.*"],
+    "output": ["src/a.*", "./src/b.html"],
     "build": {
       "pathmap": ["^src/(.*)", "$1"]
     }
