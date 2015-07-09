@@ -2,6 +2,11 @@
 
 ---
 
+## 0.5.9
+
+- feat: use multiple entry, so entry file can be required by other files
+- fix: copy file don't work with pathmap
+
 ## 0.5.8
 
 - deps: add atpl-loader
