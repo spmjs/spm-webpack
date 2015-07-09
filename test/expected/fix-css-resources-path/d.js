@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(2);
+	module.exports = __webpack_require__(4);
 
 
 /***/ },
@@ -53,6 +53,14 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 3 */,
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(2);
+
 
 /***/ }
 /******/ ]);

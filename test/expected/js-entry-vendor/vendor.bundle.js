@@ -107,13 +107,14 @@
 	
 	console.log('a');
 
-	__webpack_require__(4);
+	__webpack_require__(5);
 
 
 /***/ },
 /* 2 */,
 /* 3 */,
-/* 4 */
+/* 4 */,
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	console.log('b');

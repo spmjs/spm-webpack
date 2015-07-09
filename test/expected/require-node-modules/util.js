@@ -44,12 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	
-	var e = __webpack_require__(4);
-	console.log(e);
-	console.log(e.format);
-	console.log(e.log);
-	console.log(e.inherits);
+	module.exports = __webpack_require__(7);
 
 
 /***/ },
@@ -748,6 +743,19 @@
 	    throw new Error('process.chdir is not supported');
 	};
 	process.umask = function() { return 0; };
+
+
+/***/ },
+/* 6 */,
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	
+	var e = __webpack_require__(4);
+	console.log(e);
+	console.log(e.format);
+	console.log(e.log);
+	console.log(e.inherits);
 
 
 /***/ }

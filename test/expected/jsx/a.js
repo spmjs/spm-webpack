@@ -44,15 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/** @jsx React.DOM */
-
-	var Foo = __webpack_require__(1);
-
-	var Test = React.createClass({displayName: "Test",
-	  render: function() {
-	    return React.createElement("div", null, React.createElement(Foo, null));
-	  }
-	});
+	module.exports = __webpack_require__(2);
 
 
 /***/ },
@@ -64,6 +56,21 @@
 	module.exports = React.createClass({displayName: "exports",
 	  render: function() {
 	    return React.createElement("div", {className: "foo"});
+	  }
+	});
+
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/** @jsx React.DOM */
+
+	var Foo = __webpack_require__(1);
+
+	var Test = React.createClass({displayName: "Test",
+	  render: function() {
+	    return React.createElement("div", null, React.createElement(Foo, null));
 	  }
 	});
 

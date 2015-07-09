@@ -1,7 +1,0 @@
-
-@import './b/b.css';
-@import '../c/c.css';
-
-a {
-  background: url(./a.jpg#abc);
-}

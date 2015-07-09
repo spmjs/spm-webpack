@@ -2,6 +2,7 @@
   "spm": {
     "output": [
       "a.js"
-    ]
+    ],
+    "extractCSS": true
   }
 }

@@ -44,39 +44,46 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(2);
-	__webpack_require__(1);
-	__webpack_require__(3);
-
-	console.log('entry');
+	module.exports = __webpack_require__(1);
 
 
 /***/ },
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	console.log('relative');
+	__webpack_require__(3);
+	__webpack_require__(2);
+	__webpack_require__(4);
+
+	console.log('entry');
 
 
 /***/ },
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
-	
-	console.log('a');
-
-	__webpack_require__(4);
+	console.log('relative');
 
 
 /***/ },
 /* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
-	console.log('private in a');
+	
+	console.log('a');
+
+	__webpack_require__(5);
 
 
 /***/ },
 /* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+	console.log('private in a');
+
+
+/***/ },
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	console.log('b');

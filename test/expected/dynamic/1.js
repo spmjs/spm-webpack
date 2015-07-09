@@ -1,6 +1,6 @@
-webpackJsonp([0],[
-/* 0 */,
-/* 1 */
+webpackJsonp([1],{
+
+/***/ 2:
 /***/ function(module, exports, __webpack_require__) {
 
 	
@@ -10,4 +10,5 @@ webpackJsonp([0],[
 
 
 /***/ }
-]);
+
+});

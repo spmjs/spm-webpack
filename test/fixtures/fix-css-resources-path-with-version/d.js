@@ -1,1 +1,0 @@
-require('./c/c.css');

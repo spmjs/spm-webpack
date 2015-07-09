@@ -44,9 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	
-	var tpl = __webpack_require__(5);
-	console.log(tpl({title:1}));
+	module.exports = __webpack_require__(9);
 
 
 /***/ },
@@ -569,6 +567,15 @@
 	// Create a simple path alias to allow browserify to resolve
 	// the runtime on a supported path.
 	module.exports = __webpack_require__(6);
+
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	
+	var tpl = __webpack_require__(5);
+	console.log(tpl({title:1}));
 
 
 /***/ }
