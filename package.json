@@ -1,6 +1,6 @@
 {
   "name": "spm-webpack",
-  "version": "0.5.9",
+  "version": "0.6.0",
   "description": "SPM project bundler based on webpack.",
   "dependencies": {
     "atpl-loader": "~0.1.0",

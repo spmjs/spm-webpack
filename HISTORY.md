@@ -2,6 +2,12 @@
 
 ---
 
+## 0.6.0
+
+- feat: support progress plugin
+- feat: html support compiler.outputFileSystem
+- feat: html support watch
+
 ## 0.5.9
 
 - feat: use multiple entry, so entry file can be required by other files
