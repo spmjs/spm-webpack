@@ -316,6 +316,14 @@ describe('lib/build.js', function() {
     assert(dest, 'require-node-modules');
   });
 
+  it('html-minify-enable', function*() {
+    yield build({
+      cwd: join(fixtures, 'html-minify-enable'),
+      dest: dest
+    });
+    assert(dest, 'html-minify-enable');
+  });
+
   describe('css-output-custom-loader', function() {
 
     var oldCwd;

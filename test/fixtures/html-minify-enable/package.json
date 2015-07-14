@@ -1,0 +1,10 @@
+{
+  "spm": {
+    "output": [
+      "a.js",
+      "index.htm"
+    ],
+    "htmlMinify": true,
+    "extractCSS": true
+  }
+}
