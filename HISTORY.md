@@ -2,6 +2,13 @@
 
 ---
 
+## 0.7.0
+
+- deps: 升级 webpack 到 1.10
+- feat: 支持 html 的压缩，通过在 package.json 里配置 htmlMinify 开启
+- fix: windows 下构建 css 出错的问题
+- fix: watch 模式下，修改 html 可能导致 crash 的问题  
+
 ## 0.6.1
 
 - fix: don't exit if get error in watch mode
