@@ -28,6 +28,7 @@
     "jsx2-loader": "~0.13.1",
     "less": "~2.4.0",
     "less-loader": "~2.1.0",
+    "mkdirp": "~0.5.1",
     "node-libs-browser": "~0.5.2",
     "qs": "~2.4.1",
     "rimraf": "~2.3.2",
