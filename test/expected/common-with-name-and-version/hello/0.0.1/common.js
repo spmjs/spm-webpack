@@ -75,6 +75,7 @@
 /******/ 			script.type = 'text/javascript';
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
+
 /******/ 			script.src = __webpack_require__.p + "" + ({"1":"a","2":"b"}[chunkId]||chunkId) + ".js";
 /******/ 			head.appendChild(script);
 /******/ 		}
@@ -93,7 +94,7 @@
 /******/ ([
 /* 0 */,
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
 	
 	console.log('c');

@@ -52,7 +52,7 @@
 /* 2 */,
 /* 3 */,
 /* 4 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
 	
 	console.log('a');

@@ -39,7 +39,7 @@
     "spmtpl-loader": "~0.1.0",
     "style-loader": "~0.8.3",
     "url-loader": "~0.5.5",
-    "webpack": "~1.7.2",
+    "webpack": "~1.10.1",
     "webpack-core": "~0.6.1"
   },
   "devDependencies": {

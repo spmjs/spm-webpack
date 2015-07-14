@@ -50,7 +50,7 @@
 /***/ },
 /* 1 */,
 /* 2 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
 	document.write('<h1>a.js</h1>');
 

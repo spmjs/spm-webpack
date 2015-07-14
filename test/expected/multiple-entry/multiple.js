@@ -54,7 +54,7 @@
 /* 3 */,
 /* 4 */,
 /* 5 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
 	
 	console.log('b');
@@ -62,7 +62,7 @@
 
 /***/ },
 /* 6 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
 	
 	console.log('c');
