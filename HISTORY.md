@@ -2,6 +2,12 @@
 
 ---
 
+## 0.7.2
+
+- feat: js, jsx, coffee 的 loader 不解析 spm_modules 下的文件
+- fix: 修复 spm 模块解析器的 bug
+- chore: 不显示 _webpackcssentry_ 前缀的文件生成
+
 ## 0.7.0
 
 - deps: 升级 webpack 到 1.10
