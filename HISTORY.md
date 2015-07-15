@@ -2,10 +2,6 @@
 
 ---
 
-## 0.7.1
-
-- fix: 解析 spm 模块时分析 devDependencies
-
 ## 0.7.0
 
 - deps: 升级 webpack 到 1.10
