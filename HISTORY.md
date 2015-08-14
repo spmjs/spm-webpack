@@ -2,6 +2,10 @@
 
 ---
 
+## 0.7.3
+
+- fix: library 和 libraryTarget 不工作
+
 ## 0.7.2
 
 - feat: js, jsx, coffee 的 loader 不解析 spm_modules 下的文件
