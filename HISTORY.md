@@ -2,6 +2,11 @@
 
 ---
 
+## 0.7.4
+
+- fix: woff2 不被 loader 加载
+- feat: support build sourcemap `spm build --sourcemap`
+
 ## 0.7.3
 
 - fix: library 和 libraryTarget 不工作
