@@ -26,6 +26,7 @@ program
   .option('--progress', 'show progress')
   .option('--no-color', 'disable colorful print')
   .option('--no-install', 'disable install')
+  .option('--sourcemap', 'enable sourcemap for build')
   .parse(process.argv);
 
 log.config(program);
@@ -68,7 +69,9 @@ var args = {
   noInstall: !program.install,
 
   debug: program.debug,
-  progress: program.progress
+  progress: program.progress,
+
+  sourcemap: program.sourcemap
 };
 
 if (entry && entry.length) {
