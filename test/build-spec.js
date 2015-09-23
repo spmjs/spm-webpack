@@ -217,6 +217,16 @@ describe('lib/build.js', function() {
     assert(dest, 'require-less-extract');
   });
 
+  it('require sass extract', function*() {
+    yield build({
+      debug: true,
+      cwd: join(fixtures, 'require-sass'),
+      dest: dest,
+      extractCSS: true
+    });
+    assert(dest, 'require-sass-extract');
+  });
+
   it('jsx', function*() {
     yield build({
       debug: true,
@@ -392,6 +402,30 @@ describe('lib/build.js', function() {
         dest: dest
       });
       assert(dest, 'custom-loader-less');
+    });
+
+  });
+
+  describe('custom-loader-sass', function() {
+
+    var oldCwd;
+
+    before(function() {
+      oldCwd = process.cwd();
+      process.chdir(join(fixtures, 'custom-loader-sass'));
+    });
+
+    after(function() {
+      process.chdir(oldCwd);
+    });
+
+    it('custom-loader-sass', function*() {
+      yield build({
+        debug: true,
+        cwd: join(fixtures, 'custom-loader-sass'),
+        dest: dest
+      });
+      assert(dest, 'custom-loader-sass');
     });
 
   });
