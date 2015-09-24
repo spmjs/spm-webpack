@@ -2,6 +2,12 @@
 
 ---
 
+## 0.7.5
+
+- feat: build dist name with chunkhash.
+- deps: update deps css-loader@0.19.0 extract-text-webpack-plugin@0.8.2
+
+
 ## 0.7.4
 
 - fix: woff2 不被 loader 加载
