@@ -2,10 +2,10 @@
 
 ---
 
-## 0.7.5
+## 0.8.0
 
 - feat: build dist name with chunkhash.
-- deps: update deps css-loader@0.19.0 extract-text-webpack-plugin@0.8.2
+- deps: update deps css-loader@0.19.0 extract-text-webpack-plugin@0.8.2 该版本对引用 css 有严格顺序要求详见[链接](https://github.com/webpack/extract-text-webpack-plugin/issues/80)
 
 
 ## 0.7.4
