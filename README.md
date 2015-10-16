@@ -16,6 +16,9 @@ $ npm install spm-webpack -g
 ```
 
 ## Usage
+```bash
+$ spm-webpack [option] [file]
+```
 
 ## Added
 add spm.build.publicPath args pass to webpack's output.publicPath
@@ -31,10 +34,6 @@ add spm.build.publicPath args pass to webpack's output.publicPath
     }
   }
 }
-```
-
-```bash
-$ spm-webpack [option] [file]
 ```
 
 ## LISENCE
