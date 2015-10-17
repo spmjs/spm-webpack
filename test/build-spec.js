@@ -37,6 +37,15 @@ describe('lib/build.js', function() {
     });
     assert(dest, 'js-entry-umd');
   });
+  
+  it('arg-publicPath', function*() {
+    yield build({
+      debug: true,
+      cwd: join(fixtures, 'arg-publicPath'),
+      dest: dest
+    });
+    assert(dest, 'arg-publicPath');
+  });
 
   it('js entry with no package.json', function*() {
     yield build({
