@@ -247,10 +247,21 @@ describe('lib/build.js', function() {
   it('define', function*() {
     yield build({
       debug: true,
+      define: 'prod',
       cwd: join(fixtures, 'define'),
       dest: dest
     });
     assert(dest, 'define');
+  });
+
+  it('define-cli', function*() {
+    yield build({
+      debug: true,
+      define: 'NAME:cli,AGE:999,FLAG:true',
+      cwd: join(fixtures, 'define-cli'),
+      dest: dest
+    });
+    assert(dest, 'define-cli');
   });
 
   it('css-output-background', function*() {
