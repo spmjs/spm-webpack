@@ -253,6 +253,15 @@ describe('lib/build.js', function() {
     });
     assert(dest, 'define');
   });
+  it('define-default', function*() {
+    yield build({
+      debug: true,
+      define: true,
+      cwd: join(fixtures, 'define-default'),
+      dest: dest
+    });
+    assert(dest, 'define-default');
+  });
 
   // it('define-cli', function*() {
   //   yield build({

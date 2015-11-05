@@ -1,0 +1,48 @@
+{
+  "spm": {
+    "output": [
+      "a.js"
+    ],
+    "define": {
+      "dev": {
+        "NAME": "dev",
+        "AGE": 1,
+        "FLAG": true
+      },
+      "test": {
+        "NAME": "test",
+        "AGE": 2000000000,
+        "FLAG": false
+      },
+      "default": {
+        "NAME": "prod",
+        "AGE": -1,
+        "FLAG": true
+      }
+    },
+    "build": {
+      "define": {
+        "NAME": "build",
+        "AGE": 0,
+        "FLAG": false,
+        "prod": {
+          "NAME": "dev",
+          "AGE": 1,
+          "FLAG": true
+        }
+      }
+    },
+    "server": {
+      "define": {
+        "NAME": "server",
+        "AGE": 0,
+        "FLAG": false,
+        "prod": {
+          "NAME": "dev",
+          "AGE": 1,
+          "FLAG": true
+        }
+      }
+    }
+  }
+}
