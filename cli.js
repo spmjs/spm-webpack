@@ -27,7 +27,7 @@ program
   .option('--no-color', 'disable colorful print')
   .option('--no-install', 'disable install')
   .option('--sourcemap', 'enable sourcemap for build')
-  .option('--define <yourMode>', 'using the value of pkg.spm.define.yourMode or pkg.spm.define.default when "yourMode" is not specified')
+  .option('--define [yourMode]', 'using the value of pkg.spm.define.yourMode or pkg.spm.define.default when "yourMode" is not specified')
   .parse(process.argv);
 
 log.config(program);
