@@ -12,7 +12,7 @@ if(AGE === -1){
 }
 
 
-if(FLAG === false){
+if(FLAG === true){
   console.log('FLAG correct');
 }else {
   console.log('FLAG wrong');
