@@ -27,7 +27,7 @@ program
   .option('--no-color', 'disable colorful print')
   .option('--no-install', 'disable install')
   .option('--sourcemap', 'enable sourcemap for build')
-  .option('--define [value]', 'add define plugins using objects defined in pkg.spm.define(format prod) or type from client(format ENV:prod,LOG:false,NUMBER:-1)')
+  .option('--define [value]', 'add define plugins using objects defined in pkg.spm.define(format prod)')
   .parse(process.argv);
 
 log.config(program);
