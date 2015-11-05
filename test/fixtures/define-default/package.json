@@ -14,7 +14,7 @@
         "AGE": 2000000000,
         "FLAG": false
       },
-      "prod": {
+      "default": {
         "NAME": "prod",
         "AGE": -1,
         "FLAG": true

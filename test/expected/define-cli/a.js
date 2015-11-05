@@ -58,7 +58,7 @@
 	}
 
 
-	if((-1) === -1){
+	if(true){
 	  console.log('AGE correct')
 	}else {
 	  console.log('AGE wrong');
