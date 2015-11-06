@@ -73,7 +73,7 @@ var args = {
   progress: program.progress,
 
   sourcemap: program.sourcemap,
-  define: program.define || false
+  define: program.define
 };
 
 if (entry && entry.length) {
