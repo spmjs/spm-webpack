@@ -51,29 +51,31 @@
 /* 1 */
 /***/ function(module, exports) {
 
-	/** @jsx React.DOM */
+	"use strict";
 
-	module.exports = React.createClass({displayName: "exports",
-	  render: function() {
-	    return React.createElement("div", {className: "foo"});
+	module.exports = React.createClass({
+	  displayName: "exports",
+
+	  render: function render() {
+	    return React.createElement("div", { className: "foo" });
 	  }
 	});
-
 
 /***/ },
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/** @jsx React.DOM */
+	'use strict';
 
 	var Foo = __webpack_require__(1);
 
-	var Test = React.createClass({displayName: "Test",
-	  render: function() {
-	    return React.createElement("div", null, React.createElement(Foo, null));
+	var Test = React.createClass({
+	  displayName: 'Test',
+
+	  render: function render() {
+	    return React.createElement('div', null, React.createElement(Foo, null));
 	  }
 	});
-
 
 /***/ }
 /******/ ]);

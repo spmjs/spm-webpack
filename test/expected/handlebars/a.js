@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(9);
+	module.exports = __webpack_require__(8);
 
 
 /***/ },
@@ -59,16 +59,16 @@
 	exports.VERSION = VERSION;var COMPILER_REVISION = 4;
 	exports.COMPILER_REVISION = COMPILER_REVISION;
 	var REVISION_CHANGES = {
-	  1: '<= 1.0.rc.2', // 1.0.rc.2 is actually rev2 but doesn't report it
-	  2: '== 1.0.0-rc.3',
-	  3: '== 1.0.0-rc.4',
-	  4: '>= 1.0.0'
+	  1: "<= 1.0.rc.2", // 1.0.rc.2 is actually rev2 but doesn't report it
+	  2: "== 1.0.0-rc.3",
+	  3: "== 1.0.0-rc.4",
+	  4: ">= 1.0.0"
 	};
 	exports.REVISION_CHANGES = REVISION_CHANGES;
 	var isArray = Utils.isArray,
 	    isFunction = Utils.isFunction,
 	    toString = Utils.toString,
-	    objectType = '[object Object]';
+	    objectType = "[object Object]";
 
 	function HandlebarsEnvironment(helpers, partials) {
 	  this.helpers = helpers || {};
@@ -83,19 +83,23 @@
 	  logger: logger,
 	  log: log,
 
-	  registerHelper: function(name, fn, inverse) {
+	  registerHelper: function registerHelper(name, fn, inverse) {
 	    if (toString.call(name) === objectType) {
-	      if (inverse || fn) { throw new Exception('Arg not supported with multiple helpers'); }
+	      if (inverse || fn) {
+	        throw new Exception("Arg not supported with multiple helpers");
+	      }
 	      Utils.extend(this.helpers, name);
 	    } else {
-	      if (inverse) { fn.not = inverse; }
+	      if (inverse) {
+	        fn.not = inverse;
+	      }
 	      this.helpers[name] = fn;
 	    }
 	  },
 
-	  registerPartial: function(name, str) {
+	  registerPartial: function registerPartial(name, str) {
 	    if (toString.call(name) === objectType) {
-	      Utils.extend(this.partials,  name);
+	      Utils.extend(this.partials, name);
 	    } else {
 	      this.partials[name] = str;
 	    }
@@ -103,25 +107,28 @@
 	};
 
 	function registerDefaultHelpers(instance) {
-	  instance.registerHelper('helperMissing', function(arg) {
-	    if(arguments.length === 2) {
+	  instance.registerHelper("helperMissing", function (arg) {
+	    if (arguments.length === 2) {
 	      return undefined;
 	    } else {
 	      throw new Exception("Missing helper: '" + arg + "'");
 	    }
 	  });
 
-	  instance.registerHelper('blockHelperMissing', function(context, options) {
-	    var inverse = options.inverse || function() {}, fn = options.fn;
+	  instance.registerHelper("blockHelperMissing", function (context, options) {
+	    var inverse = options.inverse || function () {},
+	        fn = options.fn;
 
-	    if (isFunction(context)) { context = context.call(this); }
+	    if (isFunction(context)) {
+	      context = context.call(this);
+	    }
 
-	    if(context === true) {
+	    if (context === true) {
 	      return fn(this);
-	    } else if(context === false || context == null) {
+	    } else if (context === false || context == null) {
 	      return inverse(this);
 	    } else if (isArray(context)) {
-	      if(context.length > 0) {
+	      if (context.length > 0) {
 	        return instance.helpers.each(context, options);
 	      } else {
 	        return inverse(this);
@@ -131,79 +138,88 @@
 	    }
 	  });
 
-	  instance.registerHelper('each', function(context, options) {
-	    var fn = options.fn, inverse = options.inverse;
-	    var i = 0, ret = "", data;
+	  instance.registerHelper("each", function (context, options) {
+	    var fn = options.fn,
+	        inverse = options.inverse;
+	    var i = 0,
+	        ret = "",
+	        data;
 
-	    if (isFunction(context)) { context = context.call(this); }
+	    if (isFunction(context)) {
+	      context = context.call(this);
+	    }
 
 	    if (options.data) {
 	      data = createFrame(options.data);
 	    }
 
-	    if(context && typeof context === 'object') {
+	    if (context && typeof context === "object") {
 	      if (isArray(context)) {
-	        for(var j = context.length; i<j; i++) {
+	        for (var j = context.length; i < j; i++) {
 	          if (data) {
 	            data.index = i;
-	            data.first = (i === 0);
-	            data.last  = (i === (context.length-1));
+	            data.first = i === 0;
+	            data.last = i === context.length - 1;
 	          }
 	          ret = ret + fn(context[i], { data: data });
 	        }
 	      } else {
-	        for(var key in context) {
-	          if(context.hasOwnProperty(key)) {
-	            if(data) { 
-	              data.key = key; 
+	        for (var key in context) {
+	          if (context.hasOwnProperty(key)) {
+	            if (data) {
+	              data.key = key;
 	              data.index = i;
-	              data.first = (i === 0);
+	              data.first = i === 0;
 	            }
-	            ret = ret + fn(context[key], {data: data});
+	            ret = ret + fn(context[key], { data: data });
 	            i++;
 	          }
 	        }
 	      }
 	    }
 
-	    if(i === 0){
+	    if (i === 0) {
 	      ret = inverse(this);
 	    }
 
 	    return ret;
 	  });
 
-	  instance.registerHelper('if', function(conditional, options) {
-	    if (isFunction(conditional)) { conditional = conditional.call(this); }
+	  instance.registerHelper("if", function (conditional, options) {
+	    if (isFunction(conditional)) {
+	      conditional = conditional.call(this);
+	    }
 
 	    // Default behavior is to render the positive path if the value is truthy and not empty.
 	    // The `includeZero` option may be set to treat the condtional as purely not empty based on the
 	    // behavior of isEmpty. Effectively this determines if 0 is handled by the positive path or negative.
-	    if ((!options.hash.includeZero && !conditional) || Utils.isEmpty(conditional)) {
+	    if (!options.hash.includeZero && !conditional || Utils.isEmpty(conditional)) {
 	      return options.inverse(this);
 	    } else {
 	      return options.fn(this);
 	    }
 	  });
 
-	  instance.registerHelper('unless', function(conditional, options) {
-	    return instance.helpers['if'].call(this, conditional, {fn: options.inverse, inverse: options.fn, hash: options.hash});
+	  instance.registerHelper("unless", function (conditional, options) {
+	    return instance.helpers["if"].call(this, conditional, { fn: options.inverse, inverse: options.fn, hash: options.hash });
 	  });
 
-	  instance.registerHelper('with', function(context, options) {
-	    if (isFunction(context)) { context = context.call(this); }
+	  instance.registerHelper("with", function (context, options) {
+	    if (isFunction(context)) {
+	      context = context.call(this);
+	    }
 
 	    if (!Utils.isEmpty(context)) return options.fn(context);
 	  });
 
-	  instance.registerHelper('log', function(context, options) {
+	  instance.registerHelper("log", function (context, options) {
 	    var level = options.data && options.data.level != null ? parseInt(options.data.level, 10) : 1;
 	    instance.log(level, context);
 	  });
 	}
 
 	var logger = {
-	  methodMap: { 0: 'debug', 1: 'info', 2: 'warn', 3: 'error' },
+	  methodMap: { 0: "debug", 1: "info", 2: "warn", 3: "error" },
 
 	  // State enum
 	  DEBUG: 0,
@@ -213,19 +229,21 @@
 	  level: 3,
 
 	  // can be overridden in the host environment
-	  log: function(level, obj) {
+	  log: function log(level, obj) {
 	    if (logger.level <= level) {
 	      var method = logger.methodMap[level];
-	      if (typeof console !== 'undefined' && console[method]) {
+	      if (typeof console !== "undefined" && console[method]) {
 	        console[method].call(console, obj);
 	      }
 	    }
 	  }
 	};
 	exports.logger = logger;
-	function log(level, obj) { logger.log(level, obj); }
+	function log(level, obj) {
+	  logger.log(level, obj);
+	}
 
-	exports.log = log;var createFrame = function(object) {
+	exports.log = log;var createFrame = function createFrame(object) {
 	  var obj = {};
 	  Utils.extend(obj, object);
 	  return obj;
@@ -236,7 +254,7 @@
 /* 2 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 
 	var errorProps = ['description', 'fileName', 'lineNumber', 'message', 'name', 'number', 'stack'];
 
@@ -263,7 +281,7 @@
 
 	Exception.prototype = new Error();
 
-	exports["default"] = Exception;
+	exports['default'] = Exception;
 
 /***/ },
 /* 3 */
@@ -277,7 +295,7 @@
 	  "&": "&amp;",
 	  "<": "&lt;",
 	  ">": "&gt;",
-	  '"': "&quot;",
+	  "\"": "&quot;",
 	  "'": "&#x27;",
 	  "`": "&#x60;"
 	};
@@ -290,8 +308,8 @@
 	}
 
 	function extend(obj, value) {
-	  for(var key in value) {
-	    if(Object.prototype.hasOwnProperty.call(value, key)) {
+	  for (var key in value) {
+	    if (Object.prototype.hasOwnProperty.call(value, key)) {
 	      obj[key] = value[key];
 	    }
 	  }
@@ -301,19 +319,19 @@
 	exports.toString = toString;
 	// Sourced from lodash
 	// https://github.com/bestiejs/lodash/blob/master/LICENSE.txt
-	var isFunction = function(value) {
-	  return typeof value === 'function';
+	var isFunction = function isFunction(value) {
+	  return typeof value === "function";
 	};
 	// fallback for older versions of Chrome and Safari
 	if (isFunction(/x/)) {
-	  isFunction = function(value) {
-	    return typeof value === 'function' && toString.call(value) === '[object Function]';
+	  isFunction = function (value) {
+	    return typeof value === "function" && toString.call(value) === "[object Function]";
 	  };
 	}
 	var isFunction;
 	exports.isFunction = isFunction;
-	var isArray = Array.isArray || function(value) {
-	  return (value && typeof value === 'object') ? toString.call(value) === '[object Array]' : false;
+	var isArray = Array.isArray || function (value) {
+	  return value && typeof value === "object" ? toString.call(value) === "[object Array]" : false;
 	};
 	exports.isArray = isArray;
 
@@ -330,7 +348,9 @@
 	  // an object's to string has escaped characters in it.
 	  string = "" + string;
 
-	  if(!possible.test(string)) { return string; }
+	  if (!possible.test(string)) {
+	    return string;
+	  }
 	  return string.replace(badChars, escapeChar);
 	}
 
@@ -356,7 +376,7 @@
 	  this.string = string;
 	}
 
-	SafeString.prototype.toString = function() {
+	SafeString.prototype.toString = function () {
 	  return "" + this.string;
 	};
 
@@ -364,25 +384,6 @@
 
 /***/ },
 /* 5 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var Handlebars = __webpack_require__(8);
-	module.exports = (Handlebars["default"] || Handlebars).template(function (Handlebars,depth0,helpers,partials,data) {
-	  this.compilerInfo = [4,'>= 1.0.0'];
-	helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-	  var buffer = "", stack1, helper, functionType="function", escapeExpression=this.escapeExpression;
-
-
-	  buffer += "hello ";
-	  if (helper = helpers.title) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-	  else { helper = (depth0 && depth0.title); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-	  buffer += escapeExpression(stack1)
-	    + "\n";
-	  return buffer;
-	  });
-
-/***/ },
-/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -394,10 +395,10 @@
 	var SafeString = __webpack_require__(4)["default"];
 	var Exception = __webpack_require__(2)["default"];
 	var Utils = __webpack_require__(3);
-	var runtime = __webpack_require__(7);
+	var runtime = __webpack_require__(6);
 
 	// For compatibility and usage outside of module systems, make the Handlebars object a namespace
-	var create = function() {
+	var create = function create() {
 	  var hb = new base.HandlebarsEnvironment();
 
 	  Utils.extend(hb, base);
@@ -406,7 +407,7 @@
 	  hb.Utils = Utils;
 
 	  hb.VM = runtime;
-	  hb.template = function(spec) {
+	  hb.template = function (spec) {
 	    return runtime.template(spec, hb);
 	  };
 
@@ -419,7 +420,7 @@
 	exports["default"] = Handlebars;
 
 /***/ },
-/* 7 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -436,17 +437,15 @@
 	    if (compilerRevision < currentRevision) {
 	      var runtimeVersions = REVISION_CHANGES[currentRevision],
 	          compilerVersions = REVISION_CHANGES[compilerRevision];
-	      throw new Exception("Template was precompiled with an older version of Handlebars than the current runtime. "+
-	            "Please update your precompiler to a newer version ("+runtimeVersions+") or downgrade your runtime to an older version ("+compilerVersions+").");
+	      throw new Exception("Template was precompiled with an older version of Handlebars than the current runtime. " + "Please update your precompiler to a newer version (" + runtimeVersions + ") or downgrade your runtime to an older version (" + compilerVersions + ").");
 	    } else {
 	      // Use the embedded version info since the runtime doesn't know about this revision yet
-	      throw new Exception("Template was precompiled with a newer version of Handlebars than the current runtime. "+
-	            "Please update your runtime to a newer version ("+compilerInfo[1]+").");
+	      throw new Exception("Template was precompiled with a newer version of Handlebars than the current runtime. " + "Please update your runtime to a newer version (" + compilerInfo[1] + ").");
 	    }
 	  }
 	}
 
-	exports.checkRevision = checkRevision;// TODO: Remove this line and break up compilePartial
+	exports.checkRevision = checkRevision; // TODO: Remove this line and break up compilePartial
 
 	function template(templateSpec, env) {
 	  if (!env) {
@@ -455,9 +454,11 @@
 
 	  // Note: Using env.VM references rather than local var references throughout this section to allow
 	  // for external users to override these as psuedo-supported APIs.
-	  var invokePartialWrapper = function(partial, name, context, helpers, partials, data) {
+	  var invokePartialWrapper = function invokePartialWrapper(partial, name, context, helpers, partials, data) {
 	    var result = env.VM.invokePartial.apply(this, arguments);
-	    if (result != null) { return result; }
+	    if (result != null) {
+	      return result;
+	    }
 
 	    if (env.compile) {
 	      var options = { helpers: helpers, partials: partials, data: data };
@@ -473,19 +474,19 @@
 	    escapeExpression: Utils.escapeExpression,
 	    invokePartial: invokePartialWrapper,
 	    programs: [],
-	    program: function(i, fn, data) {
+	    program: function program(i, fn, data) {
 	      var programWrapper = this.programs[i];
-	      if(data) {
-	        programWrapper = program(i, fn, data);
+	      if (data) {
+	        programWrapper = _program(i, fn, data);
 	      } else if (!programWrapper) {
-	        programWrapper = this.programs[i] = program(i, fn);
+	        programWrapper = this.programs[i] = _program(i, fn);
 	      }
 	      return programWrapper;
 	    },
-	    merge: function(param, common) {
+	    merge: function merge(param, common) {
 	      var ret = param || common;
 
-	      if (param && common && (param !== common)) {
+	      if (param && common && param !== common) {
 	        ret = {};
 	        Utils.extend(ret, common);
 	        Utils.extend(ret, param);
@@ -497,7 +498,7 @@
 	    compilerInfo: null
 	  };
 
-	  return function(context, options) {
+	  return function (context, options) {
 	    options = options || {};
 	    var namespace = options.partial ? options : env,
 	        helpers,
@@ -507,12 +508,7 @@
 	      helpers = options.helpers;
 	      partials = options.partials;
 	    }
-	    var result = templateSpec.call(
-	          container,
-	          namespace, context,
-	          helpers,
-	          partials,
-	          options.data);
+	    var result = templateSpec.call(container, namespace, context, helpers, partials, options.data);
 
 	    if (!options.partial) {
 	      env.VM.checkRevision(container.compilerInfo);
@@ -525,7 +521,7 @@
 	exports.template = template;function programWithDepth(i, fn, data /*, $depth */) {
 	  var args = Array.prototype.slice.call(arguments, 3);
 
-	  var prog = function(context, options) {
+	  var prog = function prog(context, options) {
 	    options = options || {};
 
 	    return fn.apply(this, [context, options.data || data].concat(args));
@@ -535,8 +531,8 @@
 	  return prog;
 	}
 
-	exports.programWithDepth = programWithDepth;function program(i, fn, data) {
-	  var prog = function(context, options) {
+	exports.programWithDepth = programWithDepth;function _program(i, fn, data) {
+	  var prog = function prog(context, options) {
 	    options = options || {};
 
 	    return fn(context, options.data || data);
@@ -546,37 +542,59 @@
 	  return prog;
 	}
 
-	exports.program = program;function invokePartial(partial, name, context, helpers, partials, data) {
+	exports.program = _program;function invokePartial(partial, name, context, helpers, partials, data) {
 	  var options = { partial: true, helpers: helpers, partials: partials, data: data };
 
-	  if(partial === undefined) {
+	  if (partial === undefined) {
 	    throw new Exception("The partial " + name + " could not be found");
-	  } else if(partial instanceof Function) {
+	  } else if (partial instanceof Function) {
 	    return partial(context, options);
 	  }
 	}
 
-	exports.invokePartial = invokePartial;function noop() { return ""; }
+	exports.invokePartial = invokePartial;function noop() {
+	  return "";
+	}
 
 	exports.noop = noop;
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// Create a simple path alias to allow browserify to resolve
+	// the runtime on a supported path.
+	'use strict';
+
+	module.exports = __webpack_require__(5);
 
 /***/ },
 /* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// Create a simple path alias to allow browserify to resolve
-	// the runtime on a supported path.
-	module.exports = __webpack_require__(6);
+	'use strict';
 
+	var tpl = __webpack_require__(9);
+	console.log(tpl({ title: 1 }));
 
 /***/ },
 /* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
-	
-	var tpl = __webpack_require__(5);
-	console.log(tpl({title:1}));
+	var Handlebars = __webpack_require__(7);
+	module.exports = (Handlebars["default"] || Handlebars).template(function (Handlebars,depth0,helpers,partials,data) {
+	  this.compilerInfo = [4,'>= 1.0.0'];
+	helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+	  var buffer = "", stack1, helper, functionType="function", escapeExpression=this.escapeExpression;
 
+
+	  buffer += "hello ";
+	  if (helper = helpers.title) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+	  else { helper = (depth0 && depth0.title); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+	  buffer += escapeExpression(stack1)
+	    + "\n";
+	  return buffer;
+	  });
 
 /***/ }
 /******/ ]);

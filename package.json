@@ -24,7 +24,6 @@
     "handlebars-loader": "~0.1.8",
     "html-minifier": "~0.7.2",
     "json-loader": "~0.5.1",
-    "jsx2-loader": "~0.13.1",
     "less-loader": "~2.1.0",
     "mkdirp": "~0.5.1",
     "node-libs-browser": "~0.5.2",

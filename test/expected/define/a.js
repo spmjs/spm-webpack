@@ -51,23 +51,23 @@
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	if(true){
+	'use strict';
+
+	if (true) {
 	  console.log('NAME correct');
-	}else {
+	} else {
 	  console.log('NAME wrong');
 	}
 
-
-	if((-1) === -1){
-	  console.log('AGE correct')
-	}else {
+	if ((-1) === -1) {
+	  console.log('AGE correct');
+	} else {
 	  console.log('AGE wrong');
 	}
 
-
-	if(true){
+	if (true) {
 	  console.log('FLAG correct');
-	}else {
+	} else {
 	  console.log('FLAG wrong');
 	}
 

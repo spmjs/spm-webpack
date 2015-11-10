@@ -1,4 +1,3 @@
-/** @jsx React.DOM */
 
 var Foo = require('./Foo');
 

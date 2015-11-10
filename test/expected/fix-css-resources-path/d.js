@@ -44,23 +44,24 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(4);
+	module.exports = __webpack_require__(2);
 
 
 /***/ },
 /* 1 */,
 /* 2 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	// removed by extract-text-webpack-plugin
+	'use strict';
+
+	__webpack_require__(4);
 
 /***/ },
 /* 3 */,
 /* 4 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	__webpack_require__(2);
-
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);

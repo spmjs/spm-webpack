@@ -10,19 +10,21 @@ webpackJsonp([1],[
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
 	__webpack_require__(1);
 	__webpack_require__(3);
 	__webpack_require__(4);
 
 	console.log('entry');
 
-
 /***/ },
 /* 3 */
 /***/ function(module, exports) {
 
-	console.log('relative');
+	'use strict';
 
+	console.log('relative');
 
 /***/ },
 /* 4 */

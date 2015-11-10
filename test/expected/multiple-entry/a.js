@@ -44,19 +44,16 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(4);
+	module.exports = __webpack_require__(1);
 
 
 /***/ },
-/* 1 */,
-/* 2 */,
-/* 3 */,
-/* 4 */
+/* 1 */
 /***/ function(module, exports) {
 
-	
-	console.log('a');
+	'use strict';
 
+	console.log('a');
 
 /***/ }
 /******/ ]);

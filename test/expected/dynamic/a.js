@@ -102,13 +102,13 @@
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	
+	'use strict';
+
 	console.log('a');
 
-	__webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(2)]; (function(b) {
+	__webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(2)]; (function (b) {
 	  b('a');
 	}.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));});
-
 
 /***/ }
 /******/ ]);
