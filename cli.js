@@ -3,7 +3,6 @@
 'use strict';
 
 require('colorful').colorful();
-require('gnode');
 
 var program = require('commander');
 var log = require('spm-log');
