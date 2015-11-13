@@ -63,10 +63,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	module.exports = function(msg) {
+	module.exports = function (msg) {
 	  console.log(msg);
 	};
-
 
 /***/ }
 /******/ ])

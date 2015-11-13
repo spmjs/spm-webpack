@@ -96,9 +96,9 @@
 /* 1 */
 /***/ function(module, exports) {
 
-	
-	console.log('c');
+	'use strict';
 
+	console.log('c');
 
 /***/ }
 /******/ ]);
