@@ -2,6 +2,13 @@
 
 ---
 
+## 0.8.1
+
+- fix: fix path in windows os.
+- feat: brand new define
+- feat: use babel-loader for jsx, remove jsx-loader and jsx2-loader
+- deps: remove gnode, upgrade spm-argv
+
 ## 0.8.0
 
 - feat: build dist name with chunkhash.
