@@ -73,7 +73,11 @@
 	  displayName: 'Test',
 
 	  render: function render() {
-	    return React.createElement('div', null, React.createElement(Foo, null));
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(Foo, null)
+	    );
 	  }
 	});
 
