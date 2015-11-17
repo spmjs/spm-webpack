@@ -1,0 +1,10 @@
+{
+  "spm": {
+    "output": ["src/a.js"],
+    "build": {
+      "loader": {
+        ".cssx": "./foo"
+      }
+    }
+  }
+}
