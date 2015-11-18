@@ -3,15 +3,10 @@
   "version": "0.0.1",
   "spm": {
     "output": [
-      "test.js"
-    ],
-    "build": {
-      "vendor": ["a"],
-      "extractCSS": true
-    },
-    "dependencies": {
-      "a": "0.1.0",
-      "b": "0.1.0"
-    }
+      "a.js"
+    ]
+  },
+  "dependencies": {
+    "a": "0.1.0"
   }
 }

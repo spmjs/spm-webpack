@@ -105,21 +105,20 @@
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	
+	'use strict';
+
 	console.log('a');
 
-	__webpack_require__(5);
-
+	__webpack_require__(3);
 
 /***/ },
 /* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */
+/* 3 */
 /***/ function(module, exports) {
 
-	console.log('b');
+	'use strict';
 
+	console.log('b');
 
 /***/ }
 /******/ ]);
