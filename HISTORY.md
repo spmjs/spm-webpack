@@ -2,6 +2,10 @@
 
 ---
 
+## 0.8.2
+
+- fix: bugfix of custom loader
+
 ## 0.8.1
 
 - fix: fix path in windows os.

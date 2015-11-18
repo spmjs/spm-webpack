@@ -483,6 +483,17 @@ describe('lib/build.js', function() {
 
   });
 
+  it('unknow-custom-loader', function*() {
+
+    yield build({
+      debug: true,
+      cwd: join(fixtures, 'unknow-custom-loader'),
+      dest: dest
+    });
+    assert(dest, 'unknow-custom-loader');
+
+  });
+
 });
 
 function assert(actual, expect) {
