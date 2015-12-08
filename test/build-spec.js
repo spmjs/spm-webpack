@@ -123,25 +123,27 @@ describe('lib/build.js', function() {
     assert(dest, 'hash');
   });
 
-  it('vendor', function*() {
-    yield build({
-      debug: true,
-      cwd: join(fixtures, 'js-entry'),
-      dest: dest,
-      vendor: ['a']
-    });
-    assert(dest, 'js-entry-vendor');
-  });
-
-  it('vendor-with-name-and-version', function*() {
-    yield build({
-      debug: true,
-      cwd: join(fixtures, 'vendor-with-name-and-version'),
-      dest: dest,
-      vendor: ['a']
-    });
-    assert(dest, 'vendor-with-name-and-version');
-  });
+  //xit('vendor', function*() {
+  //  console.log(join(fixtures, 'js-entry'))
+  //  yield build({
+  //    debug: true,
+  //    cwd: join(fixtures, 'js-entry'),
+  //    dest: dest,
+  //    vendor: ["a"],
+  //    verbose: true
+  //  });
+  //  assert(dest, 'js-entry-vendor');
+  //});
+  //
+  //xit('vendor-with-name-and-version', function*() {
+  //  yield build({
+  //    debug: true,
+  //    cwd: join(fixtures, 'vendor-with-name-and-version'),
+  //    dest: dest,
+  //    vendor: ['a']
+  //  });
+  //  assert(dest, 'vendor-with-name-and-version');
+  //});
 
   it('common', function*() {
     yield build({
@@ -343,6 +345,56 @@ describe('lib/build.js', function() {
       dest: dest
     });
     assert(dest, 'html-minify-enable');
+  });
+
+  describe('vendor', function() {
+
+    var oldCwd;
+
+    before(function() {
+      oldCwd = process.cwd();
+      process.chdir(join(fixtures, 'js-entry'));
+    });
+
+    after(function() {
+      process.chdir(oldCwd);
+    });
+
+    it('vendor', function*() {
+      yield build({
+        debug: true,
+        cwd: join(fixtures, 'js-entry'),
+        dest: dest,
+        vendor: ['a']
+      });
+      assert(dest, 'js-entry-vendor');
+    });
+
+  });
+
+  describe('vendor-with-name-and-version', function() {
+
+    var oldCwd;
+
+    before(function() {
+      oldCwd = process.cwd();
+      process.chdir(join(fixtures, 'vendor-with-name-and-version'));
+    });
+
+    after(function() {
+      process.chdir(oldCwd);
+    });
+
+    it('vendor-with-name-and-version', function*() {
+      yield build({
+        debug: true,
+        cwd: join(fixtures, 'vendor-with-name-and-version'),
+        dest: dest,
+        vendor: ['a']
+      });
+      assert(dest, 'vendor-with-name-and-version');
+    });
+
   });
 
   describe('css-output-custom-loader', function() {

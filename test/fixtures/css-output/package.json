@@ -4,9 +4,9 @@
       "a.css",
       "b/a.css",
       "b.less"
-    ],
-    "dependencies": {
-      "c": "~3.0.1"
-    }
+    ]
+  },
+  "dependencies": {
+    "c": "~3.0.1"
   }
 }

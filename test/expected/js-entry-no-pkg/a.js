@@ -53,43 +53,45 @@
 
 	'use strict';
 
-	__webpack_require__(3);
 	__webpack_require__(2);
+	__webpack_require__(5);
 	__webpack_require__(4);
 
 	console.log('entry');
 
 /***/ },
 /* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	console.log('a');
+
+	__webpack_require__(3);
+
+/***/ },
+/* 3 */
 /***/ function(module, exports) {
 
 	'use strict';
 
-	console.log('relative');
-
-/***/ },
-/* 3 */
-/***/ function(module, exports, __webpack_require__) {
-
-	
-	console.log('a');
-
-	__webpack_require__(5);
-
+	console.log('b');
 
 /***/ },
 /* 4 */
 /***/ function(module, exports) {
 
-	console.log('private in a');
+	'use strict';
 
+	console.log('private in a');
 
 /***/ },
 /* 5 */
 /***/ function(module, exports) {
 
-	console.log('b');
+	'use strict';
 
+	console.log('relative');
 
 /***/ }
 /******/ ]);

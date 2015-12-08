@@ -13,25 +13,27 @@ webpackJsonp([1],[
 	'use strict';
 
 	__webpack_require__(1);
-	__webpack_require__(3);
+	__webpack_require__(5);
 	__webpack_require__(4);
 
 	console.log('entry');
 
 /***/ },
-/* 3 */
+/* 3 */,
+/* 4 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	console.log('private in a');
+
+/***/ },
+/* 5 */
 /***/ function(module, exports) {
 
 	'use strict';
 
 	console.log('relative');
-
-/***/ },
-/* 4 */
-/***/ function(module, exports) {
-
-	console.log('private in a');
-
 
 /***/ }
 ]);
