@@ -2,6 +2,11 @@
 
 ---
 
+## 1.0.0
+
+- feat: change spmjsio to npm
+
+
 ## 0.8.2
 
 - fix: bugfix of custom loader

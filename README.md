@@ -9,6 +9,10 @@ SPM project bundler based on webpack.
 
 ---
 
+# Notice
+
+From spm-webpack@1.0.0  spm-webpack does not support  spmjsio or any custom source any more !
+
 ## Install
 
 ```bash
