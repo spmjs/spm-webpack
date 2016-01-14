@@ -2,6 +2,10 @@
 
 ---
 
+## 0.8.3
+
+- fix: bugfix of babel loader not found in npm3 
+
 ## 0.8.2
 
 - fix: bugfix of custom loader
