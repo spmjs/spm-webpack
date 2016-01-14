@@ -2,6 +2,10 @@
 
 ---
 
+## 1.0.1
+
+- bugfix: babel loader not found in npm3
+
 ## 1.0.0
 
 - feat: change spmjsio to npm
