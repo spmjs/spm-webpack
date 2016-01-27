@@ -2,6 +2,10 @@
 
 ---
 
+## 1.0.2
+
+- optimize: add webpack.optimize.DedupePlugin
+
 ## 1.0.1
 
 - bugfix: babel loader not found in npm3
