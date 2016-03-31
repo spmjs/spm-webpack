@@ -1,6 +1,6 @@
 {
   "name": "spm-webpack",
-  "version": "0.7.5",
+  "version": "0.7.6",
   "description": "SPM project bundler based on webpack.",
   "dependencies": {
     "atool-monitor": "0.x",

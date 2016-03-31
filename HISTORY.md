@@ -2,11 +2,14 @@
 
 ---
 
+## 0.7.6
+
+- feat: add atool monitor.
+
 ## 0.7.5
 
 - feat: build dist name with chunkhash.
 - deps: update deps css-loader@0.19.0 extract-text-webpack-plugin@0.8.2
-
 
 ## 0.7.4
 
