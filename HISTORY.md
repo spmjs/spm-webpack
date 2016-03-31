@@ -2,6 +2,10 @@
 
 ---
 
+## 0.6.2
+
+- feat: add atool monitor
+
 ## 0.6.1
 
 - fix: don't exit if get error in watch mode
