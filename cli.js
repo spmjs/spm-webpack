@@ -98,3 +98,5 @@ function showDiff(time) {
   var diff = Date.now() - time;
   return (' (' + diff + 'ms)').to.gray.color;
 }
+
+require('atool-monitor').emit();
