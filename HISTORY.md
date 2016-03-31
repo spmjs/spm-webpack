@@ -2,6 +2,10 @@
 
 ---
 
+## 0.8.5
+
+feat: add atool monitor
+
 ## 0.8.4
 
 optimize: add webpack.optimize.DedupePlugin
