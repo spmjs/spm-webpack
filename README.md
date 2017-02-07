@@ -20,9 +20,24 @@ $ npm install spm-webpack -g
 ```
 
 ## Usage
-
 ```bash
 $ spm-webpack [option] [file]
+```
+
+## Added
+add spm.build.publicPath args pass to webpack's output.publicPath
+[webpack-configuration](https://github.com/webpack/docs/wiki/configuration#outputpublicpath)
+```javascript
+{
+  "spm": {
+    "output": [
+      "main.js"
+    ],
+    "build": {
+      "publicPath": "http://xxx.com/assets/"
+    }
+  }
+}
 ```
 
 ## LISENCE
