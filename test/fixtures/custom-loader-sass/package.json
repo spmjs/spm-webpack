@@ -1,0 +1,11 @@
+{
+  "spm": {
+    "output": ["a.js"],
+    "build": {
+      "loader": {
+        ".scss": "+./foo$"
+      },
+      "extractCSS": true
+    }
+  }
+}

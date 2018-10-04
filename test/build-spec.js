@@ -219,6 +219,16 @@ describe('lib/build.js', function() {
     assert(dest, 'require-less-extract');
   });
 
+  it('require sass extract', function*() {
+    yield build({
+      debug: true,
+      cwd: join(fixtures, 'require-sass'),
+      dest: dest,
+      extractCSS: true
+    });
+    assert(dest, 'require-sass-extract', true);
+  });
+
   it('jsx', function*() {
     yield build({
       debug: true,
@@ -469,6 +479,30 @@ describe('lib/build.js', function() {
 
   });
 
+  describe('custom-loader-sass', function() {
+
+    var oldCwd;
+
+    before(function() {
+      oldCwd = process.cwd();
+      process.chdir(join(fixtures, 'custom-loader-sass'));
+    });
+
+    after(function() {
+      process.chdir(oldCwd);
+    });
+
+    it('custom-loader-sass', function*() {
+      yield build({
+        debug: true,
+        cwd: join(fixtures, 'custom-loader-sass'),
+        dest: dest
+      });
+      assert(dest, 'custom-loader-sass', true);
+    });
+
+  });
+
   describe('scripts', function() {
 
     afterEach(function() {
@@ -496,7 +530,7 @@ describe('lib/build.js', function() {
 
 });
 
-function assert(actual, expect) {
+function assert(actual, expect, isSass) {
   expect = join(fixtures, '../expected', expect);
   glob.sync('**/*', {cwd: actual})
     .forEach(function(file) {
@@ -508,6 +542,10 @@ function assert(actual, expect) {
         } else {
           var c = fs.readFileSync(filepath).toString();
           var ec = fs.readFileSync(join(expect, file)).toString();
+          if (isSass && /\.css$/.test(filepath)) {
+            c = c.replace(/\/\*# sourceMappingURL=[^\*]+\*\//, '');
+            ec = ec.replace(/\/\*# sourceMappingURL=[^\*]+\*\//, '');
+          }
           c.should.eql(ec);
         }
       }
