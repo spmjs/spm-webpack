@@ -1,0 +1,10 @@
+{
+  "spm": {
+	"build": {
+      "publicPath":"some-path/"
+    },
+    "output": [
+      "a.js"
+    ]
+  }
+}
