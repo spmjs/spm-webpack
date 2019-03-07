@@ -27,3 +27,4 @@ _site
 sea-modules
 coverage
 test/fixtures/**/dist
+/yarn.lock
